@@ -1,0 +1,2 @@
+Put credits of used assets here:
+	ASSET NAME - ASSET OWNER - LICENSE (IF APPLICABLE)
