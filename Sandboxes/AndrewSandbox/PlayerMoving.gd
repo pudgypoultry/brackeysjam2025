@@ -13,7 +13,7 @@ var movementDirection : Vector2
 
 func Enter(old_state:State) -> void:
 	super(old_state)
-	stateManager.canRotate = true
+	
 
 
 func Exit(new_state:State) -> void:
@@ -29,6 +29,8 @@ func Update(delta) -> void:
 func PhysicsUpdate(delta) -> void:
 	super(delta)
 	parentCharacter.position += movementDirection * movementSpeed * delta
+	
+
 
 # Called from parent StateManager
 func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
@@ -37,5 +39,7 @@ func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
 	movementDirection += axisUD * Vector2.UP
 	movementDirection += axisLR * Vector2.RIGHT
 	movementDirection = movementDirection.normalized()
+	if interacting && stateManager.isNearInteractable:
+		Exit(searchingState)
 	if axisUD == 0 and axisLR == 0:
 		Exit(idleState)

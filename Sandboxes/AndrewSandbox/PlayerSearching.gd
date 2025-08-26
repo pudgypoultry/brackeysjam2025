@@ -13,7 +13,7 @@ var movementDirection : Vector2
 
 func Enter(old_state:State) -> void:
 	super(old_state)
-	stateManager.canRotate = true
+	print(stateManager.currentInteractable.responseString)
 
 
 func Exit(new_state:State) -> void:
@@ -33,10 +33,7 @@ func PhysicsUpdate(delta) -> void:
 
 # Called from parent StateManager
 func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
-	#print("Poop")
-	movementDirection = Vector2.ZERO
-	movementDirection += axisUD * Vector2.UP
-	movementDirection += axisLR * Vector2.RIGHT
-	movementDirection = movementDirection.normalized()
-	if axisUD == 0 and axisLR == 0:
+	if axisUD == 0 and axisLR == 0 && interacting:
 		Exit(idleState)
+	elif interacting:
+		Exit(movingState)

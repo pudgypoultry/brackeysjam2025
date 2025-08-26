@@ -10,14 +10,22 @@ signal Transitioned(oldState:State, newState:State)
 
 func Enter(oldState:State) -> void:
 	# called when the state is entered
-	oldState.Exit(self)
+	pass
 	
+
+
 func Exit(newState:State) -> void:
 	# called when the state is exited
 	Transitioned.emit(self, newState)
+	newState.Enter(self)
 	
+
+
 func Update(delta) -> void:
 	pass
+	
+
 
 func PhysicsUpdate(delta) -> void:
 	pass
+	

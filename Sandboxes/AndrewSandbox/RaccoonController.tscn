@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dniscs7pmoue0"]
+[gd_scene load_steps=9 format=3 uid="uid://dniscs7pmoue0"]
 
 [ext_resource type="Texture2D" uid="uid://1fl5u0dhcdh1" path="res://Assets/RaccoonPlaceholder.jpeg" id="1_mxtes"]
 [ext_resource type="Script" uid="uid://bu7nj38ak8ban" path="res://Sandboxes/AndrewSandbox/PlayerStateManager.gd" id="2_7t7oy"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://cq54u7bx5a3rv" path="res://Sandboxes/AndrewSandbox/PlayerSearching.gd" id="5_mxtes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4wuc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mxtes"]
+radius = 37.0135
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0l8a3"]
 animations = [{
@@ -21,15 +24,21 @@ animations = [{
 
 [node name="RaccoonController" type="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="RaccoonCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x4wuc")
+
+[node name="InteractableChecker" type="Area2D" parent="."]
+
+[node name="InteractableCollision" type="CollisionShape2D" parent="InteractableChecker"]
+shape = SubResource("CircleShape2D_mxtes")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_0l8a3")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("interactableChecker", "initialState")]
 script = ExtResource("2_7t7oy")
+interactableChecker = NodePath("../InteractableChecker")
 initialState = NodePath("PlayerIdle")
 
 [node name="PlayerIdle" type="Node" parent="StateManager" node_paths=PackedStringArray("movingState", "searchingState")]
@@ -46,3 +55,6 @@ searchingState = NodePath("../PlayerSearching")
 script = ExtResource("5_mxtes")
 idleState = NodePath("../PlayerIdle")
 movingState = NodePath("../PlayerMoving")
+
+[connection signal="body_entered" from="InteractableChecker" to="StateManager" method="InteractableReady"]
+[connection signal="body_exited" from="InteractableChecker" to="StateManager" method="InteractableUneady"]

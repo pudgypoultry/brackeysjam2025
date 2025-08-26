@@ -1,12 +1,13 @@
 extends StateManager
 
+@export var interactableChecker : Area2D
+
 var forwardBackward : float = 0.0
 var leftRight : float = 0.0
-var cameraRotationAmountX : float = 0.0
-var mouseSensitivityMultiplier = 0.005
 var tryingToInteract : bool = false
 var parentCharacter : StaticBody2D
-var canRotate : bool = true
+var isNearInteractable : bool = false
+var currentInteractable : Node = null
 
 
 func _ready():
@@ -18,8 +19,9 @@ func _ready():
 
 func _process(delta):
 	HandleInput(delta)
-	ApplyInput(forwardBackward, leftRight)
+	ApplyInput(forwardBackward, leftRight, tryingToInteract)
 	currentState.Update(delta)
+	
 
 
 func _physics_process(delta: float) -> void:
@@ -34,5 +36,19 @@ func HandleInput(delta):
 
 
 func ApplyInput(axisUD : float, axisLR : float, interacting : bool):
-	currentState.InterpretInput(axisUD, axisLR)
+	currentState.InterpretInput(axisUD, axisLR, interacting)
 	
+
+
+func InteractableReady(interactable : Node2D):
+	if interactable is Interactable:
+		isNearInteractable = true
+		currentInteractable = interactable
+		print(currentInteractable.enterString)
+
+
+func InteractableUneady(interactable : Node2D):
+	if interactable is Interactable:
+		print(currentInteractable.leaveString)
+		isNearInteractable = false
+		currentInteractable = null

@@ -11,7 +11,6 @@ var parentCharacter : StaticBody2D
 
 func Enter(oldState:State) -> void:
 	super(oldState)
-	stateManager.canRotate = true
 
 
 func Exit(newState:State) -> void:
@@ -29,5 +28,7 @@ func PhysicsUpdate(delta) -> void:
 
 
 func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
+	if interacting && stateManager.isNearInteractable:
+		Exit(searchingState)
 	if axisUD != 0 or axisLR != 0:
 		Exit(movingState)
