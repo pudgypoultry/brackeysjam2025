@@ -1,0 +1,33 @@
+extends State
+
+var parentCharacter : StaticBody2D
+
+@export_category("Game Rules")
+
+
+@export_category("Plugging in Nodes")
+@export var movingState : Node
+@export var searchingState : Node
+
+func Enter(oldState:State) -> void:
+	super(oldState)
+	stateManager.canRotate = true
+
+
+func Exit(newState:State) -> void:
+	super(newState)
+	
+
+
+func Update(delta) -> void:
+	super(delta)
+	
+
+
+func PhysicsUpdate(delta) -> void:
+	super(delta)
+
+
+func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
+	if axisUD != 0 or axisLR != 0:
+		Exit(movingState)

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm11ojeiuoyol"]
+
+[ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Sandboxes/AndrewSandbox/RaccoonController.tscn" id="1_wc5t2"]
+
+[node name="TestSandbox" type="Node2D"]
+
+[node name="RaccoonController" parent="." instance=ExtResource("1_wc5t2")]
+position = Vector2(502, 280)
+scale = Vector2(2.20693, 2.20693)

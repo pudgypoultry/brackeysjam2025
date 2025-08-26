@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://dniscs7pmoue0"]
+
+[ext_resource type="Texture2D" uid="uid://1fl5u0dhcdh1" path="res://Assets/RaccoonPlaceholder.jpeg" id="1_mxtes"]
+[ext_resource type="Script" uid="uid://bu7nj38ak8ban" path="res://Sandboxes/AndrewSandbox/PlayerStateManager.gd" id="2_7t7oy"]
+[ext_resource type="Script" uid="uid://d163vp4a4iuuc" path="res://Sandboxes/AndrewSandbox/PlayerIdle.gd" id="3_0l8a3"]
+[ext_resource type="Script" uid="uid://b88nn2rkq83u5" path="res://Sandboxes/AndrewSandbox/PlayerMoving.gd" id="4_7t7oy"]
+[ext_resource type="Script" uid="uid://cq54u7bx5a3rv" path="res://Sandboxes/AndrewSandbox/PlayerSearching.gd" id="5_mxtes"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4wuc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0l8a3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mxtes")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RaccoonController" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x4wuc")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_0l8a3")
+
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("initialState")]
+script = ExtResource("2_7t7oy")
+initialState = NodePath("PlayerIdle")
+
+[node name="PlayerIdle" type="Node" parent="StateManager" node_paths=PackedStringArray("movingState", "searchingState")]
+script = ExtResource("3_0l8a3")
+movingState = NodePath("../PlayerMoving")
+searchingState = NodePath("../PlayerSearching")
+
+[node name="PlayerMoving" type="Node" parent="StateManager" node_paths=PackedStringArray("idleState", "searchingState")]
+script = ExtResource("4_7t7oy")
+idleState = NodePath("../PlayerIdle")
+searchingState = NodePath("../PlayerSearching")
+
+[node name="PlayerSearching" type="Node" parent="StateManager" node_paths=PackedStringArray("idleState", "movingState")]
+script = ExtResource("5_mxtes")
+idleState = NodePath("../PlayerIdle")
+movingState = NodePath("../PlayerMoving")
