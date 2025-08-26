@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp31d5y4v5u2h"]
+
+[ext_resource type="PackedScene" uid="uid://cg8vtptukv6sk" path="res://IndividualSlot.tscn" id="1_i8y5g"]
+
+[node name="TestSlotMachineColumn" type="Node2D"]
+
+[node name="Slot1" parent="." instance=ExtResource("1_i8y5g")]
