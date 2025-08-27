@@ -1,27 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca83e6nojl2pv"]
+[gd_scene load_steps=7 format=3 uid="uid://ca83e6nojl2pv"]
 
+[ext_resource type="Script" uid="uid://h6kv3jkoe3ya" path="res://Sandboxes/CorySandbox/enemy_control.gd" id="1_0ht6w"]
 [ext_resource type="Script" uid="uid://c3l7wpm4uyl6x" path="res://Sandboxes/CorySandbox/enemy_state_manager.gd" id="1_lojy5"]
 [ext_resource type="Script" uid="uid://gadjyk5oxuu5" path="res://Sandboxes/CorySandbox/idle.gd" id="2_yfpv7"]
 [ext_resource type="Script" uid="uid://nnfm4w5drn1h" path="res://Sandboxes/CorySandbox/searching.gd" id="3_yfpv7"]
 [ext_resource type="Script" uid="uid://c67i4y1kqd3rh" path="res://Sandboxes/CorySandbox/chasing.gd" id="4_t8jq5"]
 [ext_resource type="Texture2D" uid="uid://brrtx0ghb5oe0" path="res://Assets/enemy-placeholder.jpg" id="5_40x2g"]
 
-[node name="Enemy" type="Node2D"]
+[node name="Enemy" type="Node2D" node_paths=PackedStringArray("state_manager", "ChasingState")]
+script = ExtResource("1_0ht6w")
+state_manager = NodePath("StateManager")
+ChasingState = NodePath("StateManager/Chasing")
 
-[node name="StateManager" type="Node" parent="."]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("vision_cone")]
 script = ExtResource("1_lojy5")
+vision_cone = NodePath("../VisionCone")
 metadata/_custom_type_script = "uid://dqm3tk5tg4cd8"
 
-[node name="Idle" type="Node" parent="StateManager"]
+[node name="Idle" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state")]
 script = ExtResource("2_yfpv7")
+searching_state = NodePath("../Searching")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
-[node name="Searching" type="Node" parent="StateManager"]
+[node name="Searching" type="Node" parent="StateManager" node_paths=PackedStringArray("idle_state", "chasing_state")]
 script = ExtResource("3_yfpv7")
+idle_state = NodePath("../Idle")
+chasing_state = NodePath("../Chasing")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
-[node name="Chasing" type="Node" parent="StateManager"]
+[node name="Chasing" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state")]
 script = ExtResource("4_t8jq5")
+searching_state = NodePath("../Searching")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

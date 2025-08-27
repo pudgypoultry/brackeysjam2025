@@ -1,9 +1,8 @@
 extends StateManager
 
-@export var player:Node2D
-@export var detection_meter:float
 @export var vision_cone:Area2D
 @onready var enemy: Node2D = $".."
+var player = enemy.player
 # layer 2 == things that block vision, layer 16 player only
 const vision_mask:int = pow(2, 2) + pow(2, 16)
 
@@ -16,6 +15,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func is_player_spotted() -> bool:
+	return enemy.detection >= enemy.max_detection - enemy.detection_threshold
+	
+func is_player_hidden() -> bool:
+	return enemy.detection <= enemy.min_detection + enemy.detection_threshold
 
 func is_player_visiable() -> bool:
 	# check if player is colliding with area
@@ -30,6 +34,7 @@ func is_player_visiable() -> bool:
 		var result = space_state.intersect_ray(query)
 		# check the result
 		if result and result.collider == player:
-			print("player spotted")
+			enemy.player_detected = true
 			return true
+	enemy.player_detected = false
 	return false
