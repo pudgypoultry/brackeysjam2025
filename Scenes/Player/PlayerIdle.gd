@@ -1,6 +1,6 @@
 extends State
 
-var parentCharacter : StaticBody2D
+var parentCharacter : CharacterBody2D
 
 @export_category("Game Rules")
 

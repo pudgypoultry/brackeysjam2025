@@ -3,7 +3,9 @@ extends StateManager
 @export var vision_cone:Area2D
 @export var nav_agent:NavigationAgent2D
 @onready var enemy: Node2D = $".."
-@onready var player = enemy.player
+@onready var player: Node2D = enemy.player
+@export var wait_state:State
+var player_in_cone:bool = false
 # layer 2 == things that block vision, layer 16 player only
 const vision_mask:int = pow(2, 2-1) + pow(2, 16-1)
 
@@ -25,7 +27,7 @@ func is_player_hidden() -> bool:
 
 func is_player_visiable() -> bool:
 	# check if player is colliding with area
-	if vision_cone.has_overlapping_bodies():
+	if player_in_cone:
 		# area 2d uses a mask that only the player is on
 		# check if a ray is unobstructed
 		# check a physics process raycast to see if the player can be seen
@@ -38,6 +40,19 @@ func is_player_visiable() -> bool:
 		if result and result.collider == player:
 			enemy.player_detected = true
 			return true
-	
 	enemy.player_detected = false
 	return false
+
+
+func _on_vision_cone_body_entered(body: Node2D) -> void:
+	if body == player:
+		player_in_cone = true
+
+
+func _on_vision_cone_body_exited(body: Node2D) -> void:
+	if body == player:
+		player_in_cone = false
+		
+func on_state_transition(oldState:State, newState:State):
+	super(oldState, newState)
+	enemy.state_label.text = str(newState.name)[0]

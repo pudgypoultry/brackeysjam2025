@@ -7,7 +7,7 @@ extends State
 @export var idleState : Node
 @export var movingState : Node
 
-var parentCharacter : StaticBody2D
+var parentCharacter : CharacterBody2D
 var movementDirection : Vector2
 
 

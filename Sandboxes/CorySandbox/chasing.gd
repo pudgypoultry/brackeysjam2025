@@ -1,6 +1,7 @@
 extends State
 
 @export var searching_state:State
+@export var waiting_state:State
 # moves to last known position of the player
 # transition back to Searching with a detection meter set to 90% if player
 # is not visible once the last known position is reached
@@ -31,6 +32,6 @@ func PhysicsUpdate(_delta) -> void:
 	stateManager.move_agent(_delta, true)
 	
 	if stateManager.nav_agent.is_navigation_finished():
-		self.Exit(searching_state)
+		self.Exit(waiting_state)
 		return
 	

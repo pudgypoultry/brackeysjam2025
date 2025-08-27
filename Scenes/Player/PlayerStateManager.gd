@@ -5,7 +5,7 @@ extends StateManager
 var forwardBackward : float = 0.0
 var leftRight : float = 0.0
 var tryingToInteract : bool = false
-var parentCharacter : StaticBody2D
+var parentCharacter : CharacterBody2D
 var isNearInteractable : bool = false
 var currentInteractable : Node = null
 

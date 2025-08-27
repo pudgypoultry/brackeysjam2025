@@ -2,12 +2,16 @@ extends State
 
 var return_state:State
 @export var searching_state:State
+@export var chasing_state:State
 @export var wait_delay:float = 5.0
 var current_delay:float
 
 func Enter(old_state:State) -> void:
 	super(old_state)
-	return_state = old_state
+	if old_state == chasing_state:
+		return_state = searching_state
+	else:
+		return_state = old_state
 	current_delay = wait_delay
 	
 func Exit(new_state:State) -> void:

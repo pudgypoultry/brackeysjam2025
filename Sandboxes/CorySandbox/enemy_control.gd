@@ -1,6 +1,7 @@
 extends Node2D
 
-@onready var label: Label = $Label
+@onready var detection_label: Label = $DetectionLabel
+@onready var state_label: Label = $StateLabel
 
 @export var player:Node2D
 @export var state_manager: StateManager
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		detection = min_detection
 	elif detection > max_detection:
 		detection = max_detection
-	label.text = str(detection)
+	detection_label.text = str(detection)
 		
 
 # NOTE use this function to trigger a chase if the player makes too much noise

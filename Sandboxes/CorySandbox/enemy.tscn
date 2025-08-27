@@ -15,10 +15,11 @@ script = ExtResource("1_0ht6w")
 state_manager = NodePath("StateManager")
 ChasingState = NodePath("StateManager/Chasing")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("vision_cone", "nav_agent", "initialState")]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("vision_cone", "nav_agent", "wait_state", "initialState")]
 script = ExtResource("1_lojy5")
 vision_cone = NodePath("../VisionCone")
 nav_agent = NodePath("../NavigationAgent2D")
+wait_state = NodePath("Waiting")
 initialState = NodePath("Idle")
 metadata/_custom_type_script = "uid://dqm3tk5tg4cd8"
 
@@ -34,14 +35,16 @@ idle_state = NodePath("../Idle")
 chasing_state = NodePath("../Chasing")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
-[node name="Chasing" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state")]
+[node name="Chasing" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state", "waiting_state")]
 script = ExtResource("4_t8jq5")
 searching_state = NodePath("../Searching")
+waiting_state = NodePath("../Waiting")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
-[node name="Waiting" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state")]
+[node name="Waiting" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state", "chasing_state")]
 script = ExtResource("6_colvu")
 searching_state = NodePath("../Searching")
+chasing_state = NodePath("../Chasing")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -68,8 +71,18 @@ debug_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_0ht6w")
 
-[node name="Label" type="Label" parent="."]
+[node name="DetectionLabel" type="Label" parent="."]
 offset_top = -36.0
 offset_right = 40.0
 offset_bottom = -13.0
 text = "0"
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = -29.0
+offset_top = -13.0
+offset_right = 11.0
+offset_bottom = 10.0
+text = "I"
+
+[connection signal="body_entered" from="VisionCone" to="StateManager" method="_on_vision_cone_body_entered"]
+[connection signal="body_exited" from="VisionCone" to="StateManager" method="_on_vision_cone_body_exited"]
