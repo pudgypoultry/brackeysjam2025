@@ -1,19 +1,21 @@
 extends StateManager
 
 @export var vision_cone:Area2D
+@export var nav_agent:NavigationAgent2D
 @onready var enemy: Node2D = $".."
-var player = enemy.player
+@onready var player = enemy.player
 # layer 2 == things that block vision, layer 16 player only
-const vision_mask:int = pow(2, 2) + pow(2, 16)
+const vision_mask:int = pow(2, 2-1) + pow(2, 16-1)
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func move_agent(delta:float, is_running:bool=false) -> void:
+	#if not nav_agent.is_navigation_finished():
+	var dest:Vector2 = nav_agent.get_next_path_position()
+	var dir:Vector2 = dest - enemy.position
+	var n:float = 1
+	if is_running:
+		n = enemy.run_speed_factor
+	enemy.position += dir.normalized() * enemy.movement_speed * delta * n
+	enemy.look_at(dest)
 
 func is_player_spotted() -> bool:
 	return enemy.detection >= enemy.max_detection - enemy.detection_threshold
@@ -36,5 +38,6 @@ func is_player_visiable() -> bool:
 		if result and result.collider == player:
 			enemy.player_detected = true
 			return true
+	
 	enemy.player_detected = false
 	return false

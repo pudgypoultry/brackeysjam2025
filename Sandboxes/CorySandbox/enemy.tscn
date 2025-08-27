@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ca83e6nojl2pv"]
+[gd_scene load_steps=9 format=3 uid="uid://ca83e6nojl2pv"]
 
 [ext_resource type="Script" uid="uid://h6kv3jkoe3ya" path="res://Sandboxes/CorySandbox/enemy_control.gd" id="1_0ht6w"]
 [ext_resource type="Script" uid="uid://c3l7wpm4uyl6x" path="res://Sandboxes/CorySandbox/enemy_state_manager.gd" id="1_lojy5"]
@@ -6,20 +6,26 @@
 [ext_resource type="Script" uid="uid://nnfm4w5drn1h" path="res://Sandboxes/CorySandbox/searching.gd" id="3_yfpv7"]
 [ext_resource type="Script" uid="uid://c67i4y1kqd3rh" path="res://Sandboxes/CorySandbox/chasing.gd" id="4_t8jq5"]
 [ext_resource type="Texture2D" uid="uid://brrtx0ghb5oe0" path="res://Assets/enemy-placeholder.jpg" id="5_40x2g"]
+[ext_resource type="Script" uid="uid://87ipyuusx22h" path="res://Sandboxes/CorySandbox/waiting.gd" id="6_colvu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ht6w"]
 
 [node name="Enemy" type="Node2D" node_paths=PackedStringArray("state_manager", "ChasingState")]
 script = ExtResource("1_0ht6w")
 state_manager = NodePath("StateManager")
 ChasingState = NodePath("StateManager/Chasing")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("vision_cone")]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("vision_cone", "nav_agent", "initialState")]
 script = ExtResource("1_lojy5")
 vision_cone = NodePath("../VisionCone")
+nav_agent = NodePath("../NavigationAgent2D")
+initialState = NodePath("Idle")
 metadata/_custom_type_script = "uid://dqm3tk5tg4cd8"
 
-[node name="Idle" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state")]
+[node name="Idle" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state", "waiting_state")]
 script = ExtResource("2_yfpv7")
 searching_state = NodePath("../Searching")
+waiting_state = NodePath("../Waiting")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
 [node name="Searching" type="Node" parent="StateManager" node_paths=PackedStringArray("idle_state", "chasing_state")]
@@ -33,8 +39,14 @@ script = ExtResource("4_t8jq5")
 searching_state = NodePath("../Searching")
 metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
 
+[node name="Waiting" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state")]
+script = ExtResource("6_colvu")
+searching_state = NodePath("../Searching")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.816456, 0.816456)
+position = Vector2(-3.05176e-05, -3.05176e-05)
+scale = Vector2(0.0559073, 0.0559073)
 texture = ExtResource("5_40x2g")
 
 [node name="VisionCone" type="Area2D" parent="."]
@@ -42,4 +54,22 @@ collision_layer = 32768
 collision_mask = 32768
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone"]
+position = Vector2(0, 4.76837e-07)
+rotation = -1.57079
+scale = Vector2(0.451875, 0.451875)
 polygon = PackedVector2Array(0, 0, -500, 1000, 500, 1000)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+radius = 136.01
+debug_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_0ht6w")
+
+[node name="Label" type="Label" parent="."]
+offset_top = -36.0
+offset_right = 40.0
+offset_bottom = -13.0
+text = "0"
