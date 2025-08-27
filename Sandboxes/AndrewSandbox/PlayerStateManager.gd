@@ -47,7 +47,7 @@ func InteractableReady(interactable : Node2D):
 		print(currentInteractable.enterString)
 
 
-func InteractableUneady(interactable : Node2D):
+func InteractableUnready(interactable : Node2D):
 	if interactable is Interactable:
 		print(currentInteractable.leaveString)
 		isNearInteractable = false

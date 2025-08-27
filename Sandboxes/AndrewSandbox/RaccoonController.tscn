@@ -57,4 +57,4 @@ idleState = NodePath("../PlayerIdle")
 movingState = NodePath("../PlayerMoving")
 
 [connection signal="body_entered" from="InteractableChecker" to="StateManager" method="InteractableReady"]
-[connection signal="body_exited" from="InteractableChecker" to="StateManager" method="InteractableUneady"]
+[connection signal="body_exited" from="InteractableChecker" to="StateManager" method="InteractableUnready"]
