@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cm6224dp63s55"]
+
+[ext_resource type="Script" uid="uid://bhiw46kpqsw1s" path="res://SlotController.gd" id="1_2bde3"]
+[ext_resource type="PackedScene" uid="uid://d2f8hs2lvm3l" path="res://Scenes/Slot.tscn" id="1_i7ghf"]
+[ext_resource type="Script" uid="uid://cmw677fugx6np" path="res://Reel.gd" id="3_e5817"]
+[ext_resource type="Texture2D" uid="uid://ds218rhv4r56t" path="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food.png" id="4_0gfoh"]
+[ext_resource type="Script" uid="uid://2frmipjxp4rf" path="res://Scenes/SlotSpriteLogic.gd" id="5_2bde3"]
+
+[node name="SlotMachine" type="Node2D"]
+
+[node name="SlotRows" type="Node2D" parent="."]
+script = ExtResource("1_2bde3")
+
+[node name="Slot1" parent="SlotRows" instance=ExtResource("1_i7ghf")]
+position = Vector2(721, 359)
+script = ExtResource("3_e5817")
+cell_height = 100.0
+speed = 900.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlotRows/Slot1"]
+position = Vector2(10, -293)
+scale = Vector2(4, 4)
+texture = ExtResource("4_0gfoh")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 127)
+script = ExtResource("5_2bde3")
+
+[node name="Slot2" parent="SlotRows" instance=ExtResource("1_i7ghf")]
+position = Vector2(335, 351)
+script = ExtResource("3_e5817")
+cell_height = 100.0
+speed = 900.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlotRows/Slot2"]
+position = Vector2(12, -311)
+scale = Vector2(4, 4)
+texture = ExtResource("4_0gfoh")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 126.541)
+
+[node name="Slot3" parent="SlotRows" instance=ExtResource("1_i7ghf")]
+position = Vector2(525, 361)
+script = ExtResource("3_e5817")
+cell_height = 100.0
+speed = 900.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="SlotRows/Slot3"]
+position = Vector2(7, -291)
+scale = Vector2(4, 4)
+texture = ExtResource("4_0gfoh")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 128)

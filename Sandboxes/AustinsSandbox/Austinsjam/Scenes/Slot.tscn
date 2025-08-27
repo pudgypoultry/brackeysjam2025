@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2f8hs2lvm3l"]
+
+[ext_resource type="Script" uid="uid://2frmipjxp4rf" path="res://Scenes/SlotSpriteLogic.gd" id="1_4h18v"]
+[ext_resource type="Texture2D" uid="uid://ds218rhv4r56t" path="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food.png" id="2_ncnge"]
+
+[node name="Slot" type="Node2D"]
+script = ExtResource("1_4h18v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(8.5, 0)
+scale = Vector2(5, 5)
+texture = ExtResource("2_ncnge")
+hframes = 8
+vframes = 8

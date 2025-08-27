@@ -17,7 +17,11 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-TweenTools="*res://Globals/TweenTools.gd"
+TweenTools="*res://Scripts/TweenTools.gd"
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
@@ -47,13 +51,8 @@ Interact={
 ]
 }
 
-[layer_names]
-
-2d_physics/layer_1="Physics"
-2d_physics/layer_2="Vision"
-2d_physics/layer_16="Player"
-
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
