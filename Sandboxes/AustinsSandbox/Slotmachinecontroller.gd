@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name SlotMachineController
+
 @onready var reel1: Node2D = $Slot1
 @onready var reel2: Node2D = $Slot2
 @onready var reel3: Node2D = $Slot3

@@ -45,11 +45,11 @@ func InteractableReady(interactable : Node2D):
 	if interactable is Interactable:
 		isNearInteractable = true
 		currentInteractable = interactable
-		print(currentInteractable.enterString)
+		# print(currentInteractable.enterString)
 
 
 func InteractableUnready(interactable : Node2D):
 	if interactable is Interactable:
-		print(currentInteractable.leaveString)
+		# print(currentInteractable.leaveString)
 		isNearInteractable = false
 		currentInteractable = null
