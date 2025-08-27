@@ -2,9 +2,4 @@ extends StaticBody2D
 
 class_name Interactable
 
-#var responseString = "You are rummaging through a trash can"
-#var leaveString = "Ok goodbye"
-#var enterString = "Oh hey"
-
-@export var slotMachine : PackedScene
-# Presents a Node2D to the player, the Node2D holds Sprite2Ds itself.
+# This is a top level abstract class equivalent for anything the player can interact with by pressing a button to do so

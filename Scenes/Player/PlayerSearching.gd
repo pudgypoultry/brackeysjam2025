@@ -13,9 +13,11 @@ var movementDirection : Vector2
 
 func Enter(old_state:State) -> void:
 	super(old_state)
-	var slotMachine = stateManager.currentInteractable.slotMachine.instantiate()
+	var slotMachine = stateManager.currentInteractable.slotMachineController.instantiate()
 	get_tree().root.add_child(slotMachine)
-	print("Current Position of Slot Machine: " + str(slotMachine.global_position))
+	print("Started Spinning")
+	await get_tree().create_timer(stateManager.currentInteractable.spinTime).timeout
+	print("Finished Spinning")
 
 
 func Exit(new_state:State) -> void:
