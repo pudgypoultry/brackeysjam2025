@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://blnqrkjyk2wg5"]
+
+[ext_resource type="Script" uid="uid://8q6kqhqb6p8" path="res://Scenes/Interactables/Interactable.gd" id="1_afn6c"]
+[ext_resource type="Texture2D" uid="uid://d18k2cpyqcmop" path="res://Assets/TrashCan.jpg" id="2_t7cm4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc5t2"]
+size = Vector2(20, 13.4)
+
+[node name="TrashCan" type="StaticBody2D"]
+scale = Vector2(5, 5)
+script = ExtResource("1_afn6c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.100001)
+shape = SubResource("RectangleShape2D_wc5t2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0270594, 0.0270594)
+texture = ExtResource("2_t7cm4")

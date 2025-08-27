@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dm11ojeiuoyol"]
+[gd_scene load_steps=3 format=3 uid="uid://dm11ojeiuoyol"]
 
-[ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Sandboxes/AndrewSandbox/RaccoonController.tscn" id="1_wc5t2"]
-[ext_resource type="Texture2D" uid="uid://d18k2cpyqcmop" path="res://Assets/TrashCan.jpg" id="2_4flx6"]
-[ext_resource type="Script" uid="uid://8q6kqhqb6p8" path="res://Sandboxes/AndrewSandbox/Interactable.gd" id="2_t0044"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc5t2"]
-size = Vector2(20, 13.4)
+[ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Scenes/Player/RaccoonController.tscn" id="1_wc5t2"]
+[ext_resource type="PackedScene" uid="uid://blnqrkjyk2wg5" path="res://Scenes/Interactables/InteractableExample.tscn" id="2_4flx6"]
 
 [node name="TestSandbox" type="Node2D"]
 
@@ -13,16 +9,5 @@ size = Vector2(20, 13.4)
 position = Vector2(502, 280)
 scale = Vector2(2.20693, 2.20693)
 
-[node name="TrashCan" type="StaticBody2D" parent="."]
+[node name="TrashCan" parent="." instance=ExtResource("2_4flx6")]
 position = Vector2(272, 169)
-scale = Vector2(5, 5)
-script = ExtResource("2_t0044")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TrashCan"]
-position = Vector2(0, 0.100001)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_wc5t2")
-
-[node name="Sprite2D" type="Sprite2D" parent="TrashCan"]
-scale = Vector2(0.0270594, 0.0270594)
-texture = ExtResource("2_4flx6")

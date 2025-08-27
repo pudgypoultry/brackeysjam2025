@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	currentState.PhysicsUpdate(delta)
 	# parentCharacter.move_and_slide()
 
+
 func HandleInput(delta):
 	forwardBackward = Input.get_axis("MoveDown", "MoveUp")
 	leftRight = Input.get_axis("MoveLeft", "MoveRight")
