@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca83e6nojl2pv"]
+
+[ext_resource type="Script" uid="uid://c3l7wpm4uyl6x" path="res://Sandboxes/CorySandbox/enemy_state_manager.gd" id="1_lojy5"]
+[ext_resource type="Script" uid="uid://gadjyk5oxuu5" path="res://Sandboxes/CorySandbox/idle.gd" id="2_yfpv7"]
+[ext_resource type="Script" uid="uid://nnfm4w5drn1h" path="res://Sandboxes/CorySandbox/searching.gd" id="3_yfpv7"]
+[ext_resource type="Script" uid="uid://c67i4y1kqd3rh" path="res://Sandboxes/CorySandbox/chasing.gd" id="4_t8jq5"]
+[ext_resource type="Texture2D" uid="uid://brrtx0ghb5oe0" path="res://Assets/enemy-placeholder.jpg" id="5_40x2g"]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="StateManager" type="Node" parent="."]
+script = ExtResource("1_lojy5")
+metadata/_custom_type_script = "uid://dqm3tk5tg4cd8"
+
+[node name="Idle" type="Node" parent="StateManager"]
+script = ExtResource("2_yfpv7")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
+[node name="Searching" type="Node" parent="StateManager"]
+script = ExtResource("3_yfpv7")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
+[node name="Chasing" type="Node" parent="StateManager"]
+script = ExtResource("4_t8jq5")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.816456, 0.816456)
+texture = ExtResource("5_40x2g")
+
+[node name="VisionCone" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone"]
+polygon = PackedVector2Array(0, 0, -500, 1000, 500, 1000)
