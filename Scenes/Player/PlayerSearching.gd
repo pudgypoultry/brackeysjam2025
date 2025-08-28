@@ -9,15 +9,20 @@ extends State
 
 var parentCharacter : CharacterBody2D
 var movementDirection : Vector2
+var doneInteracting : bool = false
 
 
 func Enter(old_state:State) -> void:
 	super(old_state)
+	doneInteracting = false
+	stateManager.currentInteractable.hasBeenInteractedWith = true
 	var slotMachine = stateManager.currentInteractable.slotMachineController.instantiate()
 	get_tree().root.add_child(slotMachine)
 	print("Started Spinning")
 	await get_tree().create_timer(stateManager.currentInteractable.spinTime).timeout
 	print("Finished Spinning")
+	slotMachine.queue_free()
+	doneInteracting = true
 
 
 func Exit(new_state:State) -> void:
@@ -37,7 +42,5 @@ func PhysicsUpdate(delta) -> void:
 
 # Called from parent StateManager
 func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
-	if axisUD == 0 and axisLR == 0 && interacting:
+	if doneInteracting:
 		Exit(idleState)
-	elif interacting:
-		Exit(movingState)

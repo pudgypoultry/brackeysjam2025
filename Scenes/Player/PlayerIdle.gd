@@ -29,6 +29,7 @@ func PhysicsUpdate(delta) -> void:
 
 func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
 	if interacting && stateManager.isNearInteractable:
-		Exit(searchingState)
+		if !stateManager.currentInteractable.hasBeenInteractedWith:
+			Exit(searchingState)
 	if axisUD != 0 or axisLR != 0:
 		Exit(movingState)

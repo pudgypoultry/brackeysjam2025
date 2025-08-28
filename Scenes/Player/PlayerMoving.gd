@@ -40,6 +40,7 @@ func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
 	movementDirection += axisLR * Vector2.RIGHT
 	movementDirection = movementDirection.normalized()
 	if interacting && stateManager.isNearInteractable:
-		Exit(searchingState)
+		if !stateManager.currentInteractable.hasBeenInteractedWith:
+			Exit(searchingState)
 	if axisUD == 0 and axisLR == 0:
 		Exit(idleState)

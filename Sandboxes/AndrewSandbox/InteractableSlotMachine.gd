@@ -8,6 +8,7 @@ extends Interactable
 @export var sprite : Sprite2D
 
 var spinTime : float = 1.0
+var hasBeenInteractedWith : bool = false
 
 func _ready():
 	pass
