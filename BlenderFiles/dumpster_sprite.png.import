@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< Updated upstream
 uid="uid://d16vmjkvxdr32"
+=======
+uid="uid://boauqgu4awqjo"
+>>>>>>> Stashed changes
 path="res://.godot/imported/dumpster_sprite.png-f13edb6d56564feae0985e19adf56466.ctex"
 metadata={
 "vram_texture": false

@@ -10,6 +10,7 @@ extends State
 
 func Enter(old_state:State) -> void:
 	super(old_state)
+	stateManager.animation_tree["active"] = false
 	
 func Exit(new_state:State) -> void:
 	super(new_state)

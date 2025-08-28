@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de31qgbwjpbsd" path="res://Sandboxes/AndrewSandbox/InteractableSlotMachine.gd" id="1_afn6c"]
 [ext_resource type="PackedScene" uid="uid://bh8gokp0dm4cm" path="res://Sandboxes/AustinsSandbox/test_scene.tscn" id="2_7ll3c"]
-[ext_resource type="Texture2D" uid="uid://d18k2cpyqcmop" path="res://Assets/TrashCan.jpg" id="2_t7cm4"]
+[ext_resource type="Texture2D" uid="uid://boauqgu4awqjo" path="res://BlenderFiles/dumpster_sprite.png" id="3_t7cm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wc5t2"]
 size = Vector2(20, 13.4)
@@ -18,5 +18,6 @@ position = Vector2(0, 0.100001)
 shape = SubResource("RectangleShape2D_wc5t2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.0270594, 0.0270594)
-texture = ExtResource("2_t7cm4")
+position = Vector2(-1.49012e-08, -1.49012e-08)
+scale = Vector2(0.209375, 0.209375)
+texture = ExtResource("3_t7cm4")

@@ -13,6 +13,7 @@ func Enter(old_state:State) -> void:
 	else:
 		return_state = old_state
 	current_delay = wait_delay
+	stateManager.animation_tree["active"] = false
 	
 func Exit(new_state:State) -> void:
 	super(new_state)
