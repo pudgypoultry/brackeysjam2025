@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://ca83e6nojl2pv"]
 
-[ext_resource type="Script" uid="uid://h6kv3jkoe3ya" path="res://Sandboxes/CorySandbox/enemy_control.gd" id="1_0ht6w"]
-[ext_resource type="Script" uid="uid://c3l7wpm4uyl6x" path="res://Sandboxes/CorySandbox/enemy_state_manager.gd" id="1_lojy5"]
-[ext_resource type="Script" uid="uid://gadjyk5oxuu5" path="res://Sandboxes/CorySandbox/idle.gd" id="2_yfpv7"]
-[ext_resource type="Script" uid="uid://nnfm4w5drn1h" path="res://Sandboxes/CorySandbox/searching.gd" id="3_yfpv7"]
-[ext_resource type="Script" uid="uid://c67i4y1kqd3rh" path="res://Sandboxes/CorySandbox/chasing.gd" id="4_t8jq5"]
+[ext_resource type="Script" uid="uid://h6kv3jkoe3ya" path="res://Scenes/Enemies/enemy_control.gd" id="1_0ht6w"]
+[ext_resource type="Script" uid="uid://c3l7wpm4uyl6x" path="res://Scenes/Enemies/enemy_state_manager.gd" id="1_lojy5"]
+[ext_resource type="Script" uid="uid://gadjyk5oxuu5" path="res://Scenes/Enemies/idle.gd" id="2_yfpv7"]
+[ext_resource type="Script" uid="uid://nnfm4w5drn1h" path="res://Scenes/Enemies/searching.gd" id="3_yfpv7"]
+[ext_resource type="Script" uid="uid://c67i4y1kqd3rh" path="res://Scenes/Enemies/chasing.gd" id="4_t8jq5"]
 [ext_resource type="Texture2D" uid="uid://brrtx0ghb5oe0" path="res://Assets/enemy-placeholder.jpg" id="5_40x2g"]
-[ext_resource type="Script" uid="uid://87ipyuusx22h" path="res://Sandboxes/CorySandbox/waiting.gd" id="6_colvu"]
+[ext_resource type="Script" uid="uid://87ipyuusx22h" path="res://Scenes/Enemies/waiting.gd" id="6_colvu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ht6w"]
 

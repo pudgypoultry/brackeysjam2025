@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://diunlef3wnqkq"]
 
-[ext_resource type="PackedScene" uid="uid://ca83e6nojl2pv" path="res://Sandboxes/CorySandbox/enemy.tscn" id="1_7dyju"]
+[ext_resource type="PackedScene" uid="uid://ca83e6nojl2pv" path="res://Scenes/Enemies/enemy.tscn" id="1_7dyju"]
 [ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Scenes/Player/RaccoonController.tscn" id="2_bvpv0"]
 [ext_resource type="PackedScene" uid="uid://jikos8i7uxk7" path="res://Sandboxes/CorySandbox/wall_example.tscn" id="3_hvqu8"]
 
