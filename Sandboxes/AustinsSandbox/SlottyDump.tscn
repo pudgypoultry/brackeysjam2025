@@ -10,16 +10,9 @@ script = ExtResource("1_equap")
 spin_time = null
 stop_gap = null
 
-[node name="dumpster" type="Node2D" parent="."]
-
-[node name="dumpstersprite" type="Sprite2D" parent="dumpster"]
-position = Vector2(579, 332)
-scale = Vector2(0.816501, 0.732041)
-texture = ExtResource("2_yhv0f")
-
 [node name="Slot1" type="Node2D" parent="."]
 script = ExtResource("3_3bj2g")
-row_labels = ["cookie", "wine", "egg", "cheese", "tomato", "pretzel", "watermelon", "avocado", null]
+row_labels = ["cookie", "wine", "egg", "cheese", "tomato", "pretzel", "watermelon", "avocado"]
 
 [node name="reelsprite1" type="Sprite2D" parent="Slot1"]
 position = Vector2(329, 361.839)
@@ -61,3 +54,10 @@ region_rect = Rect2(0, 0, 15, 128)
 
 [node name="stopanchor" type="Marker2D" parent="Slot3"]
 position = Vector2(695, 387)
+
+[node name="dumpster" type="Node2D" parent="."]
+
+[node name="dumpstersprite" type="Sprite2D" parent="dumpster"]
+position = Vector2(579, 332)
+scale = Vector2(0.816501, 0.732041)
+texture = ExtResource("2_yhv0f")
