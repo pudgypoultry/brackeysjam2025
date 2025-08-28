@@ -1,6 +1,7 @@
 extends StateManager
 
 @export var interactableChecker : Area2D
+@onready var animation_tree: AnimationTree = $"../AnimationTree"
 
 var forwardBackward : float = 0.0
 var leftRight : float = 0.0
@@ -32,6 +33,14 @@ func _physics_process(delta: float) -> void:
 func HandleInput(delta):
 	forwardBackward = Input.get_axis("MoveDown", "MoveUp")
 	leftRight = Input.get_axis("MoveLeft", "MoveRight")
+	if forwardBackward == 0 and leftRight == 0:
+		# pause animation when movment stops
+		animation_tree["active"] = false
+	else:
+		# start animation and set blend space to movement
+		animation_tree["active"] = true
+		animation_tree["parameters/blend_position"].x = leftRight
+		animation_tree["parameters/blend_position"].y = forwardBackward
 	tryingToInteract = Input.is_action_just_pressed("Interact")
 	
 
