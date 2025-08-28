@@ -57,10 +57,10 @@ collision_layer = 32768
 collision_mask = 32768
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone"]
-position = Vector2(0, 4.76837e-07)
+position = Vector2(3, 1)
 rotation = -1.57079
 scale = Vector2(0.451875, 0.451875)
-polygon = PackedVector2Array(0, 0, -500, 1000, 500, 1000)
+polygon = PackedVector2Array(0, 0, -250, 150, -550, 750, 550, 750, 250, 150)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 radius = 136.01

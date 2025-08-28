@@ -14,6 +14,7 @@ extends Node2D
 @export var detection_threshold:float = 5
 @export var movement_speed:float = 50
 @export var run_speed_factor:float = 2
+var std_detection_sqr_mag:float = Vector2(300, 300).length_squared()
 var detection:float = 0
 var player_detected:bool = false
 
@@ -26,9 +27,10 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	var x:float = std_detection_sqr_mag / ((player.position - self.position).length_squared() + 0.01)
 	# grow/decay detection score every physics frame
 	if player_detected:
-		detection = detection + detection_grow_rate * delta
+		detection = detection + detection_grow_rate * delta * x
 	else:
 		detection = detection - detection_decay_rate * delta
 	# cap ends
@@ -36,7 +38,7 @@ func _physics_process(delta: float) -> void:
 		detection = min_detection
 	elif detection > max_detection:
 		detection = max_detection
-	detection_label.text = str(detection)
+	detection_label.text = "%.2f" % detection
 		
 
 # NOTE use this function to trigger a chase if the player makes too much noise

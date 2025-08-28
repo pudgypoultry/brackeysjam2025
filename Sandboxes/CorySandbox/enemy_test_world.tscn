@@ -38,20 +38,33 @@ scale = Vector2(2.03996, 2.53432)
 position = Vector2(325, 79)
 player = NodePath("../RaccoonController")
 patrol_path = NodePath("../PatrolPath")
+movement_speed = 150.0
 
 [node name="PatrolPath" type="Node2D" parent="."]
 position = Vector2(514, 309)
 
 [node name="Node2D" type="Node2D" parent="PatrolPath"]
-position = Vector2(44, 132)
+position = Vector2(29, 213)
 rotation = -0.695967
 
 [node name="Node2D2" type="Node2D" parent="PatrolPath"]
-position = Vector2(186, 90)
+position = Vector2(216, 128)
 rotation = -0.695967
 
 [node name="Node2D3" type="Node2D" parent="PatrolPath"]
-position = Vector2(142, -29)
+position = Vector2(427, -104)
+rotation = -0.695967
+
+[node name="Node2D4" type="Node2D" parent="PatrolPath"]
+position = Vector2(-45, -248)
+rotation = -0.695967
+
+[node name="Node2D5" type="Node2D" parent="PatrolPath"]
+position = Vector2(-204, -39)
+rotation = -0.695967
+
+[node name="Node2D6" type="Node2D" parent="PatrolPath"]
+position = Vector2(-202, 105)
 rotation = -0.695967
 
 [node name="RaccoonController" parent="." instance=ExtResource("2_bvpv0")]
