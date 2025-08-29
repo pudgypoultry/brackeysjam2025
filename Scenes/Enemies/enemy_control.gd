@@ -1,19 +1,21 @@
 extends Node2D
 
-@onready var detection_label: Label = $DetectionLabel
-@onready var state_label: Label = $StateLabel
+@onready var enemy_logic: Node2D = $EnemyLogic
+@onready var detection_label: Label = enemy_logic.detection_label
+@onready var state_label: Label = enemy_logic.state_label
+@onready var state_manager: StateManager = enemy_logic.state_manager
+@onready var ChasingState: State = enemy_logic.chasing
 
 @export var player:Node2D
-@export var state_manager: StateManager
-@export var ChasingState: State
 @export var patrol_path:Node2D
+
 @export var detection_grow_rate:float = 50
 @export var detection_decay_rate:float = 20
 @export var max_detection:float = 100
 @export var min_detection:float = 0
 @export var detection_threshold:float = 5
-@export var movement_speed:float = 50
-@export var run_speed_factor:float = 2
+@export var movement_speed:float = 60
+@export var run_speed_factor:float = 3
 var std_detection_sqr_mag:float = Vector2(300, 300).length_squared()
 var detection:float = 0
 var player_detected:bool = false

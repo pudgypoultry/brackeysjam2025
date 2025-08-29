@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://diunlef3wnqkq"]
+[gd_scene load_steps=6 format=3 uid="uid://diunlef3wnqkq"]
 
-[ext_resource type="PackedScene" uid="uid://ca83e6nojl2pv" path="res://Scenes/Enemies/enemy.tscn" id="1_7dyju"]
 [ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Scenes/Player/RaccoonController.tscn" id="2_bvpv0"]
+[ext_resource type="PackedScene" uid="uid://ll76is5dkq5s" path="res://Scenes/Enemies/hazmat_enemy.tscn" id="3_7pc3b"]
 [ext_resource type="PackedScene" uid="uid://jikos8i7uxk7" path="res://Sandboxes/CorySandbox/wall_example.tscn" id="3_hvqu8"]
+[ext_resource type="PackedScene" uid="uid://diy7dnb2hpnqy" path="res://Scenes/Enemies/dog_enemy.tscn" id="4_yogkl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bvpv0"]
 vertices = PackedVector2Array(32.8984, 651.977, 353.344, 590.344, 607.656, 572.641, 896.297, 572.641, 1141.03, 650.008, 516.102, 570.359, 406.492, 570.359, 1142.96, 41.0078, 1106.3, 357.641, 1106.3, 186.68, 161.953, 590.344, 27.0938, 42.9766, 161.953, 265.344, 896.297, 401.68, 817.656, 357.641, 815.477, 401.68, 353.344, 501.281, 406.492, 232.281, 516.102, 113.328, 250.523, 232.281, 244.477, 501.281, 244.477, 265.344, 607.656, 497.562, 1025.48, 186.68, 1025.48, 282.562, 817.656, 282.562, 815.477, 497.562, 250.523, 113.328)
@@ -34,38 +35,69 @@ position = Vector2(1000, 315)
 rotation = -1.5708
 scale = Vector2(2.03996, 2.53432)
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("player", "patrol_path") instance=ExtResource("1_7dyju")]
-position = Vector2(325, 79)
-player = NodePath("../RaccoonController")
-patrol_path = NodePath("../PatrolPath")
-movement_speed = 150.0
-
-[node name="PatrolPath" type="Node2D" parent="."]
+[node name="PatrolPathDog" type="Node2D" parent="."]
 position = Vector2(514, 309)
 
-[node name="Node2D" type="Node2D" parent="PatrolPath"]
+[node name="Node2D" type="Node2D" parent="PatrolPathDog"]
 position = Vector2(29, 213)
 rotation = -0.695967
 
-[node name="Node2D2" type="Node2D" parent="PatrolPath"]
+[node name="Node2D2" type="Node2D" parent="PatrolPathDog"]
 position = Vector2(216, 128)
 rotation = -0.695967
 
-[node name="Node2D3" type="Node2D" parent="PatrolPath"]
+[node name="Node2D3" type="Node2D" parent="PatrolPathDog"]
 position = Vector2(427, -104)
 rotation = -0.695967
 
-[node name="Node2D4" type="Node2D" parent="PatrolPath"]
+[node name="Node2D4" type="Node2D" parent="PatrolPathDog"]
 position = Vector2(-45, -248)
 rotation = -0.695967
 
-[node name="Node2D5" type="Node2D" parent="PatrolPath"]
+[node name="Node2D5" type="Node2D" parent="PatrolPathDog"]
 position = Vector2(-204, -39)
 rotation = -0.695967
 
-[node name="Node2D6" type="Node2D" parent="PatrolPath"]
+[node name="Node2D6" type="Node2D" parent="PatrolPathDog"]
 position = Vector2(-202, 105)
+rotation = -0.695967
+
+[node name="PatrolPathHazmat" type="Node2D" parent="."]
+position = Vector2(306, 333)
+
+[node name="Node2D" type="Node2D" parent="PatrolPathHazmat"]
+position = Vector2(5, 264)
+rotation = -0.695967
+
+[node name="Node2D2" type="Node2D" parent="PatrolPathHazmat"]
+position = Vector2(630, 255)
+rotation = -0.695967
+
+[node name="Node2D3" type="Node2D" parent="PatrolPathHazmat"]
+position = Vector2(427, -104)
+rotation = -0.695967
+
+[node name="Node2D4" type="Node2D" parent="PatrolPathHazmat"]
+position = Vector2(-67, -274)
+rotation = -0.695967
+
+[node name="Node2D5" type="Node2D" parent="PatrolPathHazmat"]
+position = Vector2(-224, -78)
+rotation = -0.695967
+
+[node name="Node2D6" type="Node2D" parent="PatrolPathHazmat"]
+position = Vector2(-225, 227)
 rotation = -0.695967
 
 [node name="RaccoonController" parent="." instance=ExtResource("2_bvpv0")]
 position = Vector2(80, 341)
+
+[node name="HazmatEnemy" parent="." node_paths=PackedStringArray("player", "patrol_path") instance=ExtResource("3_7pc3b")]
+position = Vector2(190, 214)
+player = NodePath("../RaccoonController")
+patrol_path = NodePath("../PatrolPathHazmat")
+
+[node name="DogEnemy" parent="." node_paths=PackedStringArray("player", "patrol_path") instance=ExtResource("4_yogkl")]
+position = Vector2(379, 585)
+player = NodePath("../RaccoonController")
+patrol_path = NodePath("../PatrolPathDog")

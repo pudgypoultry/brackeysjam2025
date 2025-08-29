@@ -9,7 +9,7 @@ var index:int = 0
 
 func Enter(old_state:State) -> void:
 	super(old_state)
-	path = stateManager.enemy.patrol_path.get_children()
+	path = stateManager.parent_node.patrol_path.get_children()
 	index = (index + 1) % path.size()
 	
 func Exit(new_state:State) -> void:
@@ -37,4 +37,4 @@ func PhysicsUpdate(_delta) -> void:
 		return
 
 func get_path_position() -> Vector2:
-	return path[index].position + stateManager.enemy.patrol_path.position
+	return path[index].position + stateManager.parent_node.patrol_path.position

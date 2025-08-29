@@ -1,0 +1,248 @@
+[gd_scene load_steps=23 format=3 uid="uid://diy7dnb2hpnqy"]
+
+[ext_resource type="Script" uid="uid://h6kv3jkoe3ya" path="res://Scenes/Enemies/enemy_control.gd" id="1_rma7j"]
+[ext_resource type="PackedScene" uid="uid://vxr1mt0l53iw" path="res://Scenes/Enemies/enemy_logic.tscn" id="2_yu8km"]
+[ext_resource type="Texture2D" uid="uid://e806j5xs7b52" path="res://BlenderFiles/Dog_sprite_sheet.PNG" id="3_lofiq"]
+
+[sub_resource type="Animation" id="Animation_tq087"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_4bcle"]
+resource_name = "walk_E"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [18, 19, 20, 21, 22, 23, 24, 25, 26]
+}
+
+[sub_resource type="Animation" id="Animation_u0emo"]
+resource_name = "walk_N"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_haj6g"]
+resource_name = "walk_NE"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_53ao7"]
+resource_name = "walk_NW"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [63, 64, 65, 66, 67, 68, 69, 70, 71]
+}
+
+[sub_resource type="Animation" id="Animation_7ubbs"]
+resource_name = "walk_S"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [36, 37, 38, 39, 40, 41, 42, 43, 44]
+}
+
+[sub_resource type="Animation" id="Animation_beuat"]
+resource_name = "walk_SE"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [27, 28, 29, 30, 31, 32, 33, 34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_ycxl0"]
+resource_name = "walk_SW"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [45, 46, 47, 48, 49, 50, 51, 52, 53]
+}
+
+[sub_resource type="Animation" id="Animation_pko3b"]
+resource_name = "walk_W"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [54, 55, 56, 57, 58, 59, 60, 61, 62]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4bcle"]
+_data = {
+&"RESET": SubResource("Animation_tq087"),
+&"walk_E": SubResource("Animation_4bcle"),
+&"walk_N": SubResource("Animation_u0emo"),
+&"walk_NE": SubResource("Animation_haj6g"),
+&"walk_NW": SubResource("Animation_53ao7"),
+&"walk_S": SubResource("Animation_7ubbs"),
+&"walk_SE": SubResource("Animation_beuat"),
+&"walk_SW": SubResource("Animation_ycxl0"),
+&"walk_W": SubResource("Animation_pko3b")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_haj6g"]
+animation = &"walk_N"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u0emo"]
+animation = &"walk_NE"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tq087"]
+animation = &"walk_E"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_4bcle"]
+animation = &"walk_SE"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_beuat"]
+animation = &"walk_S"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ubbs"]
+animation = &"walk_SW"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ycxl0"]
+animation = &"walk_W"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pko3b"]
+animation = &"walk_NW"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_53ao7"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_haj6g")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_u0emo")
+blend_point_1/pos = Vector2(1, 1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_tq087")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_4bcle")
+blend_point_3/pos = Vector2(1, -1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_beuat")
+blend_point_4/pos = Vector2(0, -1)
+blend_point_5/node = SubResource("AnimationNodeAnimation_7ubbs")
+blend_point_5/pos = Vector2(-1, -1)
+blend_point_6/node = SubResource("AnimationNodeAnimation_ycxl0")
+blend_point_6/pos = Vector2(-1, 0)
+blend_point_7/node = SubResource("AnimationNodeAnimation_pko3b")
+blend_point_7/pos = Vector2(-1, 1)
+snap = Vector2(1, 1)
+blend_mode = 1
+sync = true
+
+[node name="DogEnemy" type="Node2D"]
+script = ExtResource("1_rma7j")
+movement_speed = 150.0
+run_speed_factor = 2.0
+
+[node name="EnemyLogic" parent="." node_paths=PackedStringArray("animation_tree", "parent_node") instance=ExtResource("2_yu8km")]
+animation_tree = NodePath("../AnimationTree")
+parent_node = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.15543, 1.15543)
+texture = ExtResource("3_lofiq")
+hframes = 9
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_4bcle")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../Sprite2D")
+tree_root = SubResource("AnimationNodeBlendSpace2D_53ao7")
+anim_player = NodePath("../Sprite2D/AnimationPlayer")
+parameters/blend_position = Vector2(0.00172508, 0.167857)

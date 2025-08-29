@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://vxr1mt0l53iw"]
+
+[ext_resource type="Script" uid="uid://d03fihm6gyy8p" path="res://Scenes/Enemies/enemy_logic.gd" id="1_5pihp"]
+[ext_resource type="Script" uid="uid://c3l7wpm4uyl6x" path="res://Scenes/Enemies/enemy_state_manager.gd" id="1_hybu1"]
+[ext_resource type="Script" uid="uid://gadjyk5oxuu5" path="res://Scenes/Enemies/idle.gd" id="2_5pihp"]
+[ext_resource type="Script" uid="uid://nnfm4w5drn1h" path="res://Scenes/Enemies/searching.gd" id="3_wjtpq"]
+[ext_resource type="Script" uid="uid://c67i4y1kqd3rh" path="res://Scenes/Enemies/chasing.gd" id="4_bsgsr"]
+[ext_resource type="Script" uid="uid://87ipyuusx22h" path="res://Scenes/Enemies/waiting.gd" id="5_2gjup"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ht6w"]
+radius = 18.0278
+
+[node name="EnemyLogic" type="Node2D"]
+script = ExtResource("1_5pihp")
+
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("vision_cone", "nav_agent", "wait_state", "initialState")]
+script = ExtResource("1_hybu1")
+vision_cone = NodePath("../VisionCone")
+nav_agent = NodePath("../NavigationAgent2D")
+wait_state = NodePath("Waiting")
+initialState = NodePath("Idle")
+metadata/_custom_type_script = "uid://dqm3tk5tg4cd8"
+
+[node name="Idle" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state", "waiting_state")]
+script = ExtResource("2_5pihp")
+searching_state = NodePath("../Searching")
+waiting_state = NodePath("../Waiting")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
+[node name="Searching" type="Node" parent="StateManager" node_paths=PackedStringArray("idle_state", "chasing_state")]
+script = ExtResource("3_wjtpq")
+idle_state = NodePath("../Idle")
+chasing_state = NodePath("../Chasing")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
+[node name="Chasing" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state", "waiting_state")]
+script = ExtResource("4_bsgsr")
+searching_state = NodePath("../Searching")
+waiting_state = NodePath("../Waiting")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
+[node name="Waiting" type="Node" parent="StateManager" node_paths=PackedStringArray("searching_state", "chasing_state")]
+script = ExtResource("5_2gjup")
+searching_state = NodePath("../Searching")
+chasing_state = NodePath("../Chasing")
+metadata/_custom_type_script = "uid://cqwtx7ok8mph6"
+
+[node name="VisionCone" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 32768
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="VisionCone"]
+position = Vector2(3, 1)
+rotation = -1.57079
+scale = Vector2(0.451875, 0.451875)
+polygon = PackedVector2Array(0, 0, -300, 35, -550, 750, 550, 750, 300, 35)
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+radius = 136.01
+debug_enabled = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_0ht6w")
+
+[node name="DetectionLabel" type="Label" parent="."]
+offset_left = 15.0
+offset_top = -36.0
+offset_right = 55.0
+offset_bottom = -13.0
+text = "0"
+
+[node name="StateLabel" type="Label" parent="."]
+offset_left = -33.0
+offset_top = -13.0
+offset_right = 7.0
+offset_bottom = 10.0
+text = "I"
+
+[connection signal="body_entered" from="VisionCone" to="StateManager" method="_on_vision_cone_body_entered"]
+[connection signal="body_exited" from="VisionCone" to="StateManager" method="_on_vision_cone_body_exited"]
