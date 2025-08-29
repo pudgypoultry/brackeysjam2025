@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://diunlef3wnqkq"]
 
 [ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Scenes/Player/RaccoonController.tscn" id="2_bvpv0"]
-[ext_resource type="PackedScene" path="res://Scenes/Enemies/hazmat_enemy.tscn" id="3_7pc3b"]
-[ext_resource type="PackedScene" path="res://Sandboxes/CorySandbox/wall_example.tscn" id="3_hvqu8"]
-[ext_resource type="PackedScene" path="res://Scenes/Enemies/dog_enemy.tscn" id="4_yogkl"]
+[ext_resource type="PackedScene" uid="uid://ll76is5dkq5s" path="res://Scenes/Enemies/hazmat_enemy.tscn" id="3_7pc3b"]
+[ext_resource type="PackedScene" uid="uid://jikos8i7uxk7" path="res://Sandboxes/CorySandbox/wall_example.tscn" id="3_hvqu8"]
+[ext_resource type="PackedScene" uid="uid://diy7dnb2hpnqy" path="res://Scenes/Enemies/dog_enemy.tscn" id="4_yogkl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_bvpv0"]
 vertices = PackedVector2Array(32.8984, 651.977, 353.344, 590.344, 607.656, 572.641, 896.297, 572.641, 1141.03, 650.008, 516.102, 570.359, 406.492, 570.359, 1142.96, 41.0078, 1106.3, 357.641, 1106.3, 186.68, 161.953, 590.344, 27.0938, 42.9766, 161.953, 265.344, 896.297, 401.68, 817.656, 357.641, 815.477, 401.68, 353.344, 501.281, 406.492, 232.281, 516.102, 113.328, 250.523, 232.281, 244.477, 501.281, 244.477, 265.344, 607.656, 497.562, 1025.48, 186.68, 1025.48, 282.562, 817.656, 282.562, 815.477, 497.562, 250.523, 113.328)
