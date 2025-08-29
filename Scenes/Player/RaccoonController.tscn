@@ -234,6 +234,8 @@ sync = true
 collision_layer = 32769
 collision_mask = 32769
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="RaccoonCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x4wuc")
 
