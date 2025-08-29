@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b75jhdhr2qdlo"]
+
+[ext_resource type="PackedScene" uid="uid://yilwpgirg4m0" path="res://Scenes/SlotMachine/slot_column.tscn" id="1_5j1ey"]
+[ext_resource type="Script" uid="uid://r4jy5r7ac2d2" path="res://Scenes/SlotMachine/slot_machine_ctrl.gd" id="1_33ucq"]
+[ext_resource type="Texture2D" uid="uid://d8vqm6f4cffu" path="res://Assets/slot_mask.png" id="2_33ucq"]
+[ext_resource type="Texture2D" uid="uid://cjrwtsj6x6knd" path="res://BlenderFiles/slotmachine_backdrop.png" id="2_ktg2g"]
+
+[node name="SlotMachine" type="Node2D"]
+script = ExtResource("1_33ucq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(547, 285)
+scale = Vector2(5.60938, 5.60938)
+texture = ExtResource("2_ktg2g")
+
+[node name="Slot_mask" type="Sprite2D" parent="."]
+self_modulate = Color(0.1234, 0.198644, 0.164185, 1)
+position = Vector2(573, 433)
+scale = Vector2(0.649074, 0.756019)
+texture = ExtResource("2_33ucq")
+
+[node name="SlotColumn" parent="Slot_mask" instance=ExtResource("1_5j1ey")]
+position = Vector2(-300.428, -1.32272)
+scale = Vector2(7, 7)
+slot_v_offset = 20.0
+
+[node name="SlotColumn2" parent="Slot_mask" instance=ExtResource("1_5j1ey")]
+position = Vector2(-30.428, -1.32272)
+scale = Vector2(7, 7)
+slot_v_offset = 20.0
+
+[node name="SlotColumn3" parent="Slot_mask" instance=ExtResource("1_5j1ey")]
+position = Vector2(229.572, -1.32272)
+scale = Vector2(7, 7)
+slot_v_offset = 20.0

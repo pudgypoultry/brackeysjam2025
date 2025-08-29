@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://despl2cyhavbm"
-path="res://.godot/imported/dumpster_sprite.png-f13edb6d56564feae0985e19adf56466.ctex"
+uid="uid://d8vqm6f4cffu"
+path="res://.godot/imported/slot_mask.png-7820f79bcc8a9493d017c39990147e99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BlenderFiles/dumpster_sprite.png"
-dest_files=["res://.godot/imported/dumpster_sprite.png-f13edb6d56564feae0985e19adf56466.ctex"]
+source_file="res://Assets/slot_mask.png"
+dest_files=["res://.godot/imported/slot_mask.png-7820f79bcc8a9493d017c39990147e99.ctex"]
 
 [params]
 
