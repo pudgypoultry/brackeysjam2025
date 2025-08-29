@@ -5,6 +5,7 @@ extends Node2D
 @onready var state_label: Label = enemy_logic.state_label
 @onready var state_manager: StateManager = enemy_logic.state_manager
 @onready var ChasingState: State = enemy_logic.chasing
+@onready var stealth_arrow: Node2D = enemy_logic.stealth_arrow
 
 @export var player:Node2D
 @export var patrol_path:Node2D
@@ -41,6 +42,7 @@ func _physics_process(delta: float) -> void:
 	elif detection > max_detection:
 		detection = max_detection
 	detection_label.text = "%.2f" % detection
+	stealth_arrow.update_stealth_arrow(player.position, detection)
 		
 
 # NOTE use this function to trigger a chase if the player makes too much noise

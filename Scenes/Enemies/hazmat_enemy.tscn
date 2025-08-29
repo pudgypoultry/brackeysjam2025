@@ -4,24 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://vxr1mt0l53iw" path="res://Scenes/Enemies/enemy_logic.tscn" id="2_0iswc"]
 [ext_resource type="Texture2D" uid="uid://tp4ka56u35lg" path="res://BlenderFiles/hazmat_walk_sprite_sheet.PNG" id="3_e7ebw"]
 
-[sub_resource type="Animation" id="Animation_0iswc"]
-resource_name = "walk_N"
-length = 0.9
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
-}
-
 [sub_resource type="Animation" id="Animation_w6t3u"]
 length = 0.001
 tracks/0/type = "value"
@@ -35,24 +17,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_4bk7e"]
-resource_name = "walk_NE"
-length = 0.9
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [9, 10, 11, 12, 13, 14, 15, 16, 17]
 }
 
 [sub_resource type="Animation" id="Animation_ovohj"]
@@ -73,8 +37,8 @@ tracks/0/keys = {
 "values": [18, 19, 20, 21, 22, 23, 24, 25, 26]
 }
 
-[sub_resource type="Animation" id="Animation_tvic6"]
-resource_name = "walk_SE"
+[sub_resource type="Animation" id="Animation_0iswc"]
+resource_name = "walk_N"
 length = 0.9
 loop_mode = 1
 step = 0.1
@@ -88,7 +52,43 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [27, 28, 29, 30, 31, 32, 33, 34, 35]
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+
+[sub_resource type="Animation" id="Animation_4bk7e"]
+resource_name = "walk_NE"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_b45qv"]
+resource_name = "walk_NW"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [63, 64, 65, 66, 67, 68, 69, 70, 71]
 }
 
 [sub_resource type="Animation" id="Animation_2uc41"]
@@ -107,6 +107,24 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [36, 37, 38, 39, 40, 41, 42, 43, 44]
+}
+
+[sub_resource type="Animation" id="Animation_tvic6"]
+resource_name = "walk_SE"
+length = 0.9
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [27, 28, 29, 30, 31, 32, 33, 34, 35]
 }
 
 [sub_resource type="Animation" id="Animation_yg0fw"]
@@ -143,24 +161,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [54, 55, 56, 57, 58, 59, 60, 61, 62]
-}
-
-[sub_resource type="Animation" id="Animation_b45qv"]
-resource_name = "walk_NW"
-length = 0.9
-loop_mode = 1
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [63, 64, 65, 66, 67, 68, 69, 70, 71]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lm14a"]

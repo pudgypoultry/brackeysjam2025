@@ -10,3 +10,4 @@ extends Node2D
 @onready var waiting: Node = $StateManager/Waiting
 @onready var detection_label: Label = $DetectionLabel
 @onready var state_label: Label = $StateLabel
+@onready var stealth_arrow: Node2D = $StealthArrow

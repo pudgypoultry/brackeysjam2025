@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://vxr1mt0l53iw"]
+[gd_scene load_steps=9 format=3 uid="uid://vxr1mt0l53iw"]
 
 [ext_resource type="Script" uid="uid://d03fihm6gyy8p" path="res://Scenes/Enemies/enemy_logic.gd" id="1_5pihp"]
 [ext_resource type="Script" uid="uid://c3l7wpm4uyl6x" path="res://Scenes/Enemies/enemy_state_manager.gd" id="1_hybu1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://nnfm4w5drn1h" path="res://Scenes/Enemies/searching.gd" id="3_wjtpq"]
 [ext_resource type="Script" uid="uid://c67i4y1kqd3rh" path="res://Scenes/Enemies/chasing.gd" id="4_bsgsr"]
 [ext_resource type="Script" uid="uid://87ipyuusx22h" path="res://Scenes/Enemies/waiting.gd" id="5_2gjup"]
+[ext_resource type="PackedScene" uid="uid://y2x1bbiidm8b" path="res://Scenes/Enemies/stealth_arrow.tscn" id="7_wjtpq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0ht6w"]
 radius = 18.0278
@@ -77,6 +78,8 @@ offset_top = -13.0
 offset_right = 7.0
 offset_bottom = 10.0
 text = "I"
+
+[node name="StealthArrow" parent="." instance=ExtResource("7_wjtpq")]
 
 [connection signal="body_entered" from="VisionCone" to="StateManager" method="_on_vision_cone_body_entered"]
 [connection signal="body_exited" from="VisionCone" to="StateManager" method="_on_vision_cone_body_exited"]
