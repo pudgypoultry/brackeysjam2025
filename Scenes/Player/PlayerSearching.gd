@@ -16,12 +16,15 @@ func Enter(old_state:State) -> void:
 	super(old_state)
 	doneInteracting = false
 	stateManager.currentInteractable.hasBeenInteractedWith = true
+	### BEGIN VOLATILE SECTION
 	var slotMachine = stateManager.currentInteractable.slotMachineController.instantiate()
 	get_tree().root.add_child(slotMachine)
 	print("Started Spinning")
 	await get_tree().create_timer(stateManager.currentInteractable.spinTime).timeout
 	print("Finished Spinning")
+	#TODO: Need to retrieve reward from spin
 	slotMachine.queue_free()
+	### END VOLATILE SECTION
 	doneInteracting = true
 
 

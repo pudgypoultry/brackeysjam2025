@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dniscs7pmoue0"]
+[gd_scene load_steps=28 format=3 uid="uid://dniscs7pmoue0"]
 
 [ext_resource type="Script" uid="uid://bu7nj38ak8ban" path="res://Scenes/Player/PlayerStateManager.gd" id="2_7t7oy"]
 [ext_resource type="Script" uid="uid://d163vp4a4iuuc" path="res://Scenes/Player/PlayerIdle.gd" id="3_0l8a3"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://cq54u7bx5a3rv" path="res://Scenes/Player/PlayerSearching.gd" id="5_mxtes"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x4wuc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_35hnj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mxtes"]
 radius = 37.0135
@@ -235,14 +237,20 @@ collision_mask = 32769
 [node name="RaccoonCollision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x4wuc")
 
+[node name="NoiseChecker" type="Area2D" parent="."]
+
+[node name="NoiseCollision" type="CollisionShape2D" parent="NoiseChecker"]
+shape = SubResource("CircleShape2D_35hnj")
+
 [node name="InteractableChecker" type="Area2D" parent="."]
 
 [node name="InteractableCollision" type="CollisionShape2D" parent="InteractableChecker"]
 shape = SubResource("CircleShape2D_mxtes")
 
-[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("interactableChecker", "initialState")]
+[node name="StateManager" type="Node" parent="." node_paths=PackedStringArray("interactableChecker", "noiseChecker", "initialState")]
 script = ExtResource("2_7t7oy")
 interactableChecker = NodePath("../InteractableChecker")
+noiseChecker = NodePath("../NoiseChecker")
 initialState = NodePath("PlayerIdle")
 
 [node name="PlayerIdle" type="Node" parent="StateManager" node_paths=PackedStringArray("movingState", "searchingState")]

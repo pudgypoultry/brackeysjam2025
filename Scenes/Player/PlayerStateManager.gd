@@ -1,6 +1,9 @@
 extends StateManager
 
 @export var interactableChecker : Area2D
+@export var noiseChecker : Area2D
+@export var startingHunger : float = 0.0
+@export var startingNoise : float = 1.0
 @onready var animation_tree: AnimationTree = $"../AnimationTree"
 
 var forwardBackward : float = 0.0
@@ -9,10 +12,13 @@ var tryingToInteract : bool = false
 var parentCharacter : CharacterBody2D
 var isNearInteractable : bool = false
 var currentInteractable : Node = null
-
+var currentHunger : float
+var currentNoise : float
 
 func _ready():
 	super._ready()
+	currentHunger = startingHunger
+	currentNoise = startingNoise
 	parentCharacter = get_parent()
 	for state in get_children():
 		state.parentCharacter = parentCharacter
@@ -22,7 +28,7 @@ func _process(delta):
 	HandleInput(delta)
 	ApplyInput(forwardBackward, leftRight, tryingToInteract)
 	currentState.Update(delta)
-	
+	noiseChecker.scale = currentNoise * Vector2.ONE
 
 
 func _physics_process(delta: float) -> void:

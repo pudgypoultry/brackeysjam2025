@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqv8nl5g0et6w"]
+
+[ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Scenes/Player/RaccoonController.tscn" id="1_blrn6"]
+[ext_resource type="PackedScene" uid="uid://blnqrkjyk2wg5" path="res://Scenes/Interactables/InteractableExample.tscn" id="2_652tf"]
+
+[node name="PrototypeScene" type="Node2D"]
+
+[node name="RaccoonController" parent="." instance=ExtResource("1_blrn6")]
+position = Vector2(654, 350)
+
+[node name="TrashCan" parent="." instance=ExtResource("2_652tf")]
+position = Vector2(262, 526)
+
+[node name="TrashCan2" parent="." instance=ExtResource("2_652tf")]
+position = Vector2(990, 353)
+
+[node name="TrashCan3" parent="." instance=ExtResource("2_652tf")]
+position = Vector2(144, 117)

@@ -61,6 +61,7 @@ Interact={
 
 2d_physics/layer_1="Physics"
 2d_physics/layer_2="VisionBlocking"
+2d_physics/layer_15="Noise"
 2d_physics/layer_16="PlayerSpecific"
 
 [rendering]

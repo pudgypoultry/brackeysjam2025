@@ -7,6 +7,7 @@
 
 [node name="RaccoonController" parent="." instance=ExtResource("1_blrn6")]
 position = Vector2(654, 350)
+scale = Vector2(2.445, 2.445)
 
 [node name="TrashCan" parent="." instance=ExtResource("2_652tf")]
 position = Vector2(262, 526)
