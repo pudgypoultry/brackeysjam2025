@@ -22,14 +22,11 @@ texture = ExtResource("2_33ucq")
 [node name="SlotColumn" parent="Slot_mask" instance=ExtResource("1_5j1ey")]
 position = Vector2(-300.428, -1.32272)
 scale = Vector2(7, 7)
-slot_v_offset = 20.0
 
 [node name="SlotColumn2" parent="Slot_mask" instance=ExtResource("1_5j1ey")]
 position = Vector2(-30.428, -1.32272)
 scale = Vector2(7, 7)
-slot_v_offset = 20.0
 
 [node name="SlotColumn3" parent="Slot_mask" instance=ExtResource("1_5j1ey")]
 position = Vector2(229.572, -1.32272)
 scale = Vector2(7, 7)
-slot_v_offset = 20.0

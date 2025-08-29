@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d0yauqef6iytq"
-path="res://.godot/imported/MelonCantaloupe.png-828ba2dc8e4c7084c783cb4c98c34aab.ctex"
+path="res://.godot/imported/MelonCantaloupe.png-b9f21ec2c6ebf83036e888d7515da9dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/MelonCantaloupe.png"
-dest_files=["res://.godot/imported/MelonCantaloupe.png-828ba2dc8e4c7084c783cb4c98c34aab.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/MelonCantaloupe.png"
+dest_files=["res://.godot/imported/MelonCantaloupe.png-b9f21ec2c6ebf83036e888d7515da9dd.ctex"]
 
 [params]
 

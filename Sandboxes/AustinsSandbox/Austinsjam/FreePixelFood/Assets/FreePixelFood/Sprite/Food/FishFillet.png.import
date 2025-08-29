@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oqm5hnygasoe"
-path="res://.godot/imported/FishFillet.png-31a387cdddfffe576874a707e5e81d74.ctex"
+path="res://.godot/imported/FishFillet.png-f5a625e732db6a0555aedb1e7be39ee0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/FishFillet.png"
-dest_files=["res://.godot/imported/FishFillet.png-31a387cdddfffe576874a707e5e81d74.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/FishFillet.png"
+dest_files=["res://.godot/imported/FishFillet.png-f5a625e732db6a0555aedb1e7be39ee0.ctex"]
 
 [params]
 

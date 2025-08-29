@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bbt7opxeu623r"
-path="res://.godot/imported/Beer.png-09b9de1445f238acc835976c9cf0f77c.ctex"
+path="res://.godot/imported/Beer.png-fd1908db0a78be7c27f17a1f18fa65bf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Beer.png"
-dest_files=["res://.godot/imported/Beer.png-09b9de1445f238acc835976c9cf0f77c.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Beer.png"
+dest_files=["res://.godot/imported/Beer.png-fd1908db0a78be7c27f17a1f18fa65bf.ctex"]
 
 [params]
 

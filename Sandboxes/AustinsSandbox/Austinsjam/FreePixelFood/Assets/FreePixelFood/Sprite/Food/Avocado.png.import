@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bs71i3sotuxhw"
-path="res://.godot/imported/Avocado.png-6d593c0655ebc84f0171db3689753d1c.ctex"
+path="res://.godot/imported/Avocado.png-f285ca924d5cfd78d9fce9387d691fe1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Avocado.png"
-dest_files=["res://.godot/imported/Avocado.png-6d593c0655ebc84f0171db3689753d1c.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Avocado.png"
+dest_files=["res://.godot/imported/Avocado.png-f285ca924d5cfd78d9fce9387d691fe1.ctex"]
 
 [params]
 

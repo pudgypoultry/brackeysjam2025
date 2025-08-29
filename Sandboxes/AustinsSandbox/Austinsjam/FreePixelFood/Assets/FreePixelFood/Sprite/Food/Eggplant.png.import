@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o2a71t35tlc5"
-path="res://.godot/imported/Eggplant.png-11d97a7eeff195736189c326db989d10.ctex"
+path="res://.godot/imported/Eggplant.png-0dd18ef49fe6d784a7c0cfe53acaebd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Eggplant.png"
-dest_files=["res://.godot/imported/Eggplant.png-11d97a7eeff195736189c326db989d10.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Eggplant.png"
+dest_files=["res://.godot/imported/Eggplant.png-0dd18ef49fe6d784a7c0cfe53acaebd9.ctex"]
 
 [params]
 

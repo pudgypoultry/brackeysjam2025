@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sdtlouhmby3a"
-path="res://.godot/imported/Tomato.png-fcc91acaf3bbfdfd0cb6e37a3cd96721.ctex"
+path="res://.godot/imported/Tomato.png-99d857edc76ca1cba735cd6405a6acea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png"
-dest_files=["res://.godot/imported/Tomato.png-fcc91acaf3bbfdfd0cb6e37a3cd96721.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Tomato.png"
+dest_files=["res://.godot/imported/Tomato.png-99d857edc76ca1cba735cd6405a6acea.ctex"]
 
 [params]
 

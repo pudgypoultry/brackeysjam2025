@@ -5,52 +5,95 @@ const SLOT_COLUMN = preload("res://Scenes/SlotMachine/slot_column.tscn")
 @onready var slot_mask: Sprite2D = $Slot_mask
 @onready var slot_columns: Array[SlotColumn] = [$Slot_mask/SlotColumn, $Slot_mask/SlotColumn2, $Slot_mask/SlotColumn3]
 
-var slot1_values:Array[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11]
-#var slot2_values:Array[int] = [10, 15, 20]
-#var slot3_values:Array[int] = [7, 5, 3]
-var column_size:int = slot1_values.size()
-var column_offset:float
-var current_column_offsets:Array[float] = [0, 0, 0]
-var spin_count:int = 0
-var current_spin:int = 0
+var slot1_values:Array[int] = [0, 8, 16, 24, 32, 40, 48, 56]
+var slot1_names:Array[String] = ["cookie", "wine","egg", "cheese", "tomato", "pretzel", "watermelon", "avocado"]
 
-# Called when the node enters the scene tree for the first time.
+var col_values:Array = [slot1_values, slot1_values, slot1_values]
+var col_names:Array  = [slot1_names,  slot1_names,  slot1_names]
+
+@export var base_spin_time: float = 1.2
+@export var stop_gap: float = 0.25
+@export var extra_loops: int = 2
+@export var easing: Tween.EaseType = Tween.EASE_OUT
+@export var trans: Tween.TransitionType = Tween.TRANS_QUAD
+
+var column_size:int = 0
+var column_span: float = 0.0
+var spin_lock: bool = false
+
 func _ready() -> void:
-	# vertical offset of the full slot column
-	column_offset = -slot_columns[0].slot_v_offset * column_size * slot_columns[0].scale.y
-	
-	slot_columns[0].build_column(slot1_values)
-	slot_columns[0].position += Vector2(0, column_offset)
-	
-	slot_columns[1].build_column(slot1_values)
-	slot_columns[1].position += Vector2(0, column_offset)
-	
-	slot_columns[2].build_column(slot1_values)
-	slot_columns[2].position += Vector2(0, column_offset)
+	column_size = slot1_values.size()
+	column_span = slot_columns[0].slot_v_offset * float(column_size) * slot_columns[0].scale.y
+	for i in range(slot_columns.size()):
+		slot_columns[i].build_column(col_values[i])
+		slot_columns[i].position.y = -0.0
 
-
-# spins the slot_machine and returns the indexes of the resulting slots
 func spin() -> Array[int]:
-	var result_array:Array[int] = []
-	for i in slot_columns.size():
-		# pick a random index
-		var result:int = randi() % slot_columns[i].slot_array.size()
-		result_array.append(result)
-		# TODO reset column offsets if repeating
-		if current_column_offsets[i] != 0:
-			slot_columns[i].position -= Vector2(0, current_column_offsets[i])
-			current_column_offsets[i] -= current_column_offsets[i]
-		# TODO tween column down offset/(result/col.slot_array.size())
-		var result_offset:float = column_offset - (column_offset * (float(result) / float(slot_columns[i].slot_array.size())) )
-		current_column_offsets[i] -= result_offset
-		slot_columns[i].position -= Vector2(0, result_offset)
-		# TODO increment spin count once tween is finished
-	print("spin results: ", result_array)
-	await get_tree().create_timer(0.2).timeout
-	spin_count += 1
-	return result_array
-	
-func _process(delta: float) -> void:
-	if Input.is_action_pressed("Spin Slot Machine") and current_spin == spin_count:
-		current_spin += 1
+	if spin_lock:
+		return []
+	spin_lock = true
+
+	var longest_tween: Tween = null
+
+	for i in range(slot_columns.size()):
+		var col := slot_columns[i]
+		var idx:int = randi() % col.slot_array.size()
+		var frac := float(idx) / float(col.slot_array.size())
+		var travel: float = (float(extra_loops) * column_span) + (frac * column_span)
+		var target_y := col.position.y - travel
+		var duration := base_spin_time + (float(i) * stop_gap)
+		var t := create_tween().set_trans(trans).set_ease(easing)
+		t.tween_property(col, "position:y", target_y, duration)
+		if longest_tween == null or duration > longest_tween.get_total_elapsed_time():
+			longest_tween = t
+
+	if longest_tween != null:
+		await longest_tween.finished
+
+	for i in range(slot_columns.size()):
+		var col := slot_columns[i]
+		var y := col.position.y
+		var wrapped :float = y - floor(y / -column_span) * -column_span
+		col.position.y = wrapped
+
+	var result_idx:Array[int] = []
+	var result_names:Array[String] = []
+	var result_frames:Array[int] = []
+	for i in range(slot_columns.size()):
+		var col := slot_columns[i]
+		var step := col.slot_v_offset * col.scale.y
+		var offset := fposmod(-col.position.y, column_span)
+		var visible := int(round(offset / step)) % column_size
+		result_idx.append(visible)
+		result_names.append(col_names[i][visible])
+		result_frames.append(col_values[i][visible])
+
+	print("spin results (idx): ", result_idx, " | names: ", result_names, " | frames: ", result_frames)
+	check_win(result_names)
+
+	spin_lock = false
+	return result_idx
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("Spin Slot Machine"):
 		spin()
+
+func check_win(result_names: Array[String]) -> void:
+	if result_names.size() < 3:
+		return
+	var counts := {}
+	for n in result_names:
+		counts[n] = (counts.get(n, 0) as int) + 1
+	var max_count := 0
+	var winner := ""
+	for k in counts.keys():
+		var c:int = counts[k]
+		if c > max_count:
+			max_count = c
+			winner = k
+	if max_count == 3:
+		print("🦝 WHOA! Jackpot! 3 ", winner, "s! You're really 'racc-rolling' now! 🦝")
+	elif max_count == 2:
+		print(" Two ", winner, "s! A 'racc-tacular' little win! ")
+	else:
+		print("No win! keep 'racc-ing' those spins!")

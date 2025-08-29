@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b51fmu3bdbgot"
-path="res://.godot/imported/Cheese.png-fee1fe1e9867d50e2d37487821121c92.ctex"
+path="res://.godot/imported/Cheese.png-5f6cb4938ab057a4aa0a4972f9a16b63.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png"
-dest_files=["res://.godot/imported/Cheese.png-fee1fe1e9867d50e2d37487821121c92.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Cheese.png"
+dest_files=["res://.godot/imported/Cheese.png-5f6cb4938ab057a4aa0a4972f9a16b63.ctex"]
 
 [params]
 

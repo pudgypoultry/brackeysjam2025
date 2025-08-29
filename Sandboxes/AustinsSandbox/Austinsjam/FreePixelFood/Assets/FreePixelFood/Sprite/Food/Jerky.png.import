@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ogpn2eqh6002"
-path="res://.godot/imported/Jerky.png-6345a4c578e0166572468648e9b465b5.ctex"
+path="res://.godot/imported/Jerky.png-de09c39dfe0c32e84a584ca4bf592198.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Jerky.png"
-dest_files=["res://.godot/imported/Jerky.png-6345a4c578e0166572468648e9b465b5.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Jerky.png"
+dest_files=["res://.godot/imported/Jerky.png-de09c39dfe0c32e84a584ca4bf592198.ctex"]
 
 [params]
 

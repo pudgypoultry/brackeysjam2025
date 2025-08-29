@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://210gc62p2s1m"
-path="res://.godot/imported/Stein.png-8df4fafc7460457b656321d79ca14efe.ctex"
+path="res://.godot/imported/Stein.png-5a5d16e30587f155b6b680233feb5697.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Stein.png"
-dest_files=["res://.godot/imported/Stein.png-8df4fafc7460457b656321d79ca14efe.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Stein.png"
+dest_files=["res://.godot/imported/Stein.png-5a5d16e30587f155b6b680233feb5697.ctex"]
 
 [params]
 

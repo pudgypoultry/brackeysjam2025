@@ -13,6 +13,6 @@ func build_column(slots:Array[int]) -> void:
 	for i in slots.size():
 		var obj = SLOT.instantiate()
 		self.add_child(obj)
-		obj.set_slot(slots[i]) # set slot to the given index
-		obj.position += Vector2(0, i * slot_v_offset) # translate slot down
+		obj.set_slot(slots[i])
+		obj.position += Vector2(0, i * slot_v_offset) 
 		slot_array.append(obj)

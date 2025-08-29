@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://smyruwnvd30j"
-path="res://.godot/imported/Grubs.png-2e89ca1860ea3a6e7b01c336bb7484cc.ctex"
+path="res://.godot/imported/Grubs.png-031044df6c2cb12e0184fadbd5b042a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Grubs.png"
-dest_files=["res://.godot/imported/Grubs.png-2e89ca1860ea3a6e7b01c336bb7484cc.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Grubs.png"
+dest_files=["res://.godot/imported/Grubs.png-031044df6c2cb12e0184fadbd5b042a2.ctex"]
 
 [params]
 

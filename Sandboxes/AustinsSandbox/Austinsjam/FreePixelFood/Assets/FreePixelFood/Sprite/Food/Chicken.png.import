@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgbkb708cgx5q"
-path="res://.godot/imported/Chicken.png-0fe64ba9786c04b1eba8052bcc63cfcf.ctex"
+path="res://.godot/imported/Chicken.png-4054ca32daee8e7b650c75b6d487dd3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Chicken.png"
-dest_files=["res://.godot/imported/Chicken.png-0fe64ba9786c04b1eba8052bcc63cfcf.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Chicken.png"
+dest_files=["res://.godot/imported/Chicken.png-4054ca32daee8e7b650c75b6d487dd3c.ctex"]
 
 [params]
 

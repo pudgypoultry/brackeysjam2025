@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dc3hfa8ro3qxg"
-path="res://.godot/imported/Pineapple.png-3478853e558fbd1ee12903393e9dc228.ctex"
+path="res://.godot/imported/Pineapple.png-010a2a72134582ee8dc43f870104ceec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pineapple.png"
-dest_files=["res://.godot/imported/Pineapple.png-3478853e558fbd1ee12903393e9dc228.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pineapple.png"
+dest_files=["res://.godot/imported/Pineapple.png-010a2a72134582ee8dc43f870104ceec.ctex"]
 
 [params]
 

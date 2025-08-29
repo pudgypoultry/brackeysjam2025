@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pnle32xervni"
-path="res://.godot/imported/Boar.png-03853e263a7434bcb01331ae223c9b31.ctex"
+path="res://.godot/imported/Boar.png-da6941f52e8cd4b9408a28b249bb11b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Boar.png"
-dest_files=["res://.godot/imported/Boar.png-03853e263a7434bcb01331ae223c9b31.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Boar.png"
+dest_files=["res://.godot/imported/Boar.png-da6941f52e8cd4b9408a28b249bb11b5.ctex"]
 
 [params]
 

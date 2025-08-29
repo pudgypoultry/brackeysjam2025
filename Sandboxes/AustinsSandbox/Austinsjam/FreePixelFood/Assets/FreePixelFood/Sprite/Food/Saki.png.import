@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg1pj24kbalyp"
-path="res://.godot/imported/Saki.png-0a64e339ddcff61e9815b41260056191.ctex"
+path="res://.godot/imported/Saki.png-94161b2a4fe47da3db5bd8a35bfe4e86.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Saki.png"
-dest_files=["res://.godot/imported/Saki.png-0a64e339ddcff61e9815b41260056191.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Saki.png"
+dest_files=["res://.godot/imported/Saki.png-94161b2a4fe47da3db5bd8a35bfe4e86.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnit33pdwsg78"
-path="res://.godot/imported/Pickle.png-ea1612b0b2560509bf2376c41933d85b.ctex"
+path="res://.godot/imported/Pickle.png-e5a86e6aee42b0475c7c48ac4a03ff53.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pickle.png"
-dest_files=["res://.godot/imported/Pickle.png-ea1612b0b2560509bf2376c41933d85b.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Pickle.png"
+dest_files=["res://.godot/imported/Pickle.png-e5a86e6aee42b0475c7c48ac4a03ff53.ctex"]
 
 [params]
 

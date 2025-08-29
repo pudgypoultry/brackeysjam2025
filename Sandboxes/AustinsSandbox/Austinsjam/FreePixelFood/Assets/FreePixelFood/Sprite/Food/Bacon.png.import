@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fg6ju4hijelh"
-path="res://.godot/imported/Bacon.png-3e638aa953f8ef662dd0e31b08050305.ctex"
+path="res://.godot/imported/Bacon.png-7c5485c737df81894d6f2c6565505808.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Bacon.png"
-dest_files=["res://.godot/imported/Bacon.png-3e638aa953f8ef662dd0e31b08050305.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Bacon.png"
+dest_files=["res://.godot/imported/Bacon.png-7c5485c737df81894d6f2c6565505808.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vc3ifv27gpcd"
-path="res://.godot/imported/Olive.png-5d50a2aad9cd3c6dfbd4d977ff3fd93c.ctex"
+path="res://.godot/imported/Olive.png-501be84ffa914ffe283f12fb158645e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/Olive.png"
-dest_files=["res://.godot/imported/Olive.png-5d50a2aad9cd3c6dfbd4d977ff3fd93c.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/Olive.png"
+dest_files=["res://.godot/imported/Olive.png-501be84ffa914ffe283f12fb158645e5.ctex"]
 
 [params]
 

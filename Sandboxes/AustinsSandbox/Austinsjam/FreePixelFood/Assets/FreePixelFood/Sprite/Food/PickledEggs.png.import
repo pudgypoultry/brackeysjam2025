@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bq2i38mfopto5"
-path="res://.godot/imported/PickledEggs.png-c19b9d6695529369e27f529e6a0f2af1.ctex"
+path="res://.godot/imported/PickledEggs.png-379a2da98972c629662110a0156a892b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FreePixelFood/Assets/FreePixelFood/Sprite/Food/PickledEggs.png"
-dest_files=["res://.godot/imported/PickledEggs.png-c19b9d6695529369e27f529e6a0f2af1.ctex"]
+source_file="res://Sandboxes/AustinsSandbox/Austinsjam/FreePixelFood/Assets/FreePixelFood/Sprite/Food/PickledEggs.png"
+dest_files=["res://.godot/imported/PickledEggs.png-379a2da98972c629662110a0156a892b.ctex"]
 
 [params]
 

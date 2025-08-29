@@ -1,61 +1,33 @@
 [gd_scene load_steps=5 format=3 uid="uid://bh8gokp0dm4cm"]
 
-[ext_resource type="Script" uid="uid://c0qy4p8rvwu40" path="res://Sandboxes/AustinsSandbox/Slotmachinecontroller.gd" id="1_5tms5"]
-[ext_resource type="Script" uid="uid://dh36lscyxd7fd" path="res://Sandboxes/AustinsSandbox/Slotslogic.gd" id="2_dxjlp"]
-[ext_resource type="Texture2D" uid="uid://b3dh1l65s2cix" path="res://Assets/Dumpster.png" id="2_hdddn"]
-[ext_resource type="Texture2D" uid="uid://co0lbw8ip1brg" path="res://Assets/Food.png" id="3_3vhb8"]
+[ext_resource type="Script" uid="uid://r4jy5r7ac2d2" path="res://Scenes/SlotMachine/slot_machine_ctrl.gd" id="1_hdddn"]
+[ext_resource type="PackedScene" uid="uid://yilwpgirg4m0" path="res://Scenes/SlotMachine/slot_column.tscn" id="2_fo4gc"]
+[ext_resource type="Texture2D" uid="uid://cjrwtsj6x6knd" path="res://BlenderFiles/slotmachine_backdrop.png" id="2_hdddn"]
+[ext_resource type="Texture2D" uid="uid://d8vqm6f4cffu" path="res://Assets/slot_mask.png" id="3_e4nd7"]
 
-[node name="Slotmachine" type="Node2D"]
-script = ExtResource("1_5tms5")
+[node name="Slot_machine" type="Node2D"]
+script = ExtResource("1_hdddn")
 
-[node name="Slot1" type="Node2D" parent="."]
-script = ExtResource("2_dxjlp")
-row_labels = ["cookie", "wine", "egg", "cheese", "tomato", "pretzel", "watermelon", "avocado"]
-
-[node name="reelsprite1" type="Sprite2D" parent="Slot1"]
-position = Vector2(328, 374)
-scale = Vector2(-5.30004, 5.92209)
-texture = ExtResource("3_3vhb8")
-hframes = 8
-vframes = 8
-region_rect = Rect2(0, 1.988, 15, 128)
-
-[node name="stopanchor" type="Marker2D" parent="Slot1"]
-position = Vector2(322, 386)
-
-[node name="Slot2" type="Node2D" parent="."]
-script = ExtResource("2_dxjlp")
-row_labels = ["cookie", "wine", "egg", "cheese", "tomato", "pretzel", "watermelon", "avocado"]
-
-[node name="reelsprite2" type="Sprite2D" parent="Slot2"]
-position = Vector2(507, 370)
-scale = Vector2(-6.63161, 5.72833)
-texture = ExtResource("3_3vhb8")
-hframes = 8
-vframes = 8
-region_rect = Rect2(0, 0, 15, 128)
-
-[node name="stopanchor" type="Marker2D" parent="Slot2"]
-position = Vector2(486, 396)
-
-[node name="Slot3" type="Node2D" parent="."]
-script = ExtResource("2_dxjlp")
-row_labels = ["cookie", "wine", "egg", "cheese", "tomato", "pretzel", "watermelon", "avocado"]
-
-[node name="reelsprite3" type="Sprite2D" parent="Slot3"]
-position = Vector2(692, 371)
-scale = Vector2(-6.04905, 5.83908)
-texture = ExtResource("3_3vhb8")
-hframes = 8
-vframes = 8
-region_rect = Rect2(0, 0, 15, 128)
-
-[node name="stopanchor" type="Marker2D" parent="Slot3"]
-position = Vector2(695, 387)
-
-[node name="dumpster" type="Node2D" parent="."]
-
-[node name="dumpstersprite" type="Sprite2D" parent="dumpster"]
-position = Vector2(579, 332)
-scale = Vector2(0.816501, 0.732041)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(542, 296)
+scale = Vector2(5.88281, 5.35938)
 texture = ExtResource("2_hdddn")
+
+[node name="Slot_mask" type="Sprite2D" parent="."]
+self_modulate = Color(0.1234, 0.198644, 0.164185, 1)
+clip_children = 2
+position = Vector2(573, 433)
+scale = Vector2(0.649074, 0.756019)
+texture = ExtResource("3_e4nd7")
+
+[node name="SlotColumn" parent="Slot_mask" instance=ExtResource("2_fo4gc")]
+position = Vector2(-300.428, -1.32272)
+scale = Vector2(7, 7)
+
+[node name="SlotColumn2" parent="Slot_mask" instance=ExtResource("2_fo4gc")]
+position = Vector2(-30.428, -1.32272)
+scale = Vector2(7, 7)
+
+[node name="SlotColumn3" parent="Slot_mask" instance=ExtResource("2_fo4gc")]
+position = Vector2(229.572, -1.32272)
+scale = Vector2(7, 7)
