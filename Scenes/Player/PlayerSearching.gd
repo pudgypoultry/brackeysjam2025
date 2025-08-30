@@ -63,4 +63,4 @@ func HandleSlotDone():
 
 
 func HandleSpin():
-	stateManager.currentNoise *= 2.5
+	stateManager.currentNoise *= 1.9
