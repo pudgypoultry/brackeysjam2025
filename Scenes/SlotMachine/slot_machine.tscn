@@ -36,11 +36,11 @@ position = Vector2(229.572, -1.32272)
 scale = Vector2(7, 7)
 
 [node name="Label" type="Label" parent="."]
-visible = false
-offset_left = 239.0
-offset_top = 512.0
-offset_right = 320.0
-offset_bottom = 562.0
+offset_left = -425.0
+offset_top = 363.0
+offset_right = 397.0
+offset_bottom = 448.0
 label_settings = SubResource("LabelSettings_33ucq")
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3

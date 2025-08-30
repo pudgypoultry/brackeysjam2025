@@ -8,7 +8,7 @@ extends Node2D
 @onready var stealth_arrow: Node2D = enemy_logic.stealth_arrow
 
 @export var player:Node2D
-@export var patrol_path:Node2D
+@export var patrol_path:Node
 
 @export var detection_grow_rate:float = 50
 @export var detection_decay_rate:float = 20

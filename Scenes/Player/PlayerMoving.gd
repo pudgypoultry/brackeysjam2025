@@ -30,7 +30,8 @@ func Update(delta) -> void:
 
 func PhysicsUpdate(delta) -> void:
 	super(delta)
-	parentCharacter.position += movementDirection * movementSpeed * delta
+	parentCharacter.move_and_collide(movementDirection * movementSpeed * delta)
+	#parentCharacter.position += movementDirection * movementSpeed * delta
 	
 
 

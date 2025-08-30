@@ -37,4 +37,5 @@ func PhysicsUpdate(_delta) -> void:
 		return
 
 func get_path_position() -> Vector2:
-	return path[index].position + stateManager.parent_node.patrol_path.position
+	#return path[index].position + stateManager.parent_node.patrol_path.position
+	return path[index].position
