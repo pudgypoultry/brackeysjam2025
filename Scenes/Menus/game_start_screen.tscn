@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://1dc2s2sd0yea"]
+[gd_scene load_steps=6 format=3 uid="uid://1dc2s2sd0yea"]
 
 [ext_resource type="Texture2D" uid="uid://dxa43gwraeose" path="res://BlenderFiles/MenuBanner.png" id="1_6b2kt"]
+[ext_resource type="Script" uid="uid://b5bm7jw3gnmso" path="res://Scenes/Menus/game_start_screen.gd" id="1_a7hkq"]
+[ext_resource type="Texture2D" uid="uid://b3jc2vfgrm4kf" path="res://Assets/Food/Cookie.png" id="2_1b6rn"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bjvkm"]
 font_size = 106
@@ -9,25 +11,36 @@ shadow_size = 34
 shadow_color = Color(0, 0, 0, 0.603922)
 shadow_offset = Vector2(5, 5)
 
-[node name="GameOverScreen" type="Control"]
+[sub_resource type="Theme" id="Theme_a7hkq"]
+default_font_size = 28
+
+[node name="GameStartScreen" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a7hkq")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 6
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_6b2kt")
 expand_mode = 2
+stretch_mode = 5
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -46,3 +59,72 @@ text = "One Armed Bandit"
 label_settings = SubResource("LabelSettings_bjvkm")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -23.0
+offset_right = 104.0
+offset_bottom = 26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a7hkq")
+text = "Start"
+icon = ExtResource("2_1b6rn")
+
+[node name="Tutorial" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 36.0
+offset_right = 104.0
+offset_bottom = 85.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a7hkq")
+text = "Tutorial"
+icon = ExtResource("2_1b6rn")
+
+[node name="Credits" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 96.0
+offset_right = 104.0
+offset_bottom = 145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a7hkq")
+text = "Credits"
+icon = ExtResource("2_1b6rn")
+
+[node name="Quit" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = 156.0
+offset_right = 104.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a7hkq")
+text = "Exit"
+icon = ExtResource("2_1b6rn")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

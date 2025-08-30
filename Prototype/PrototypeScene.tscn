@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://dqv8nl5g0et6w"]
+[gd_scene load_steps=11 format=3 uid="uid://dqv8nl5g0et6w"]
 
 [ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Scenes/Player/RaccoonController.tscn" id="1_blrn6"]
+[ext_resource type="Script" uid="uid://f4liexew3hsw" path="res://Prototype/prototype_scene.gd" id="1_ti7t0"]
 [ext_resource type="Texture2D" uid="uid://cohybxhqftdkj" path="res://BlenderFiles/NeighborhoodLayer1.png" id="1_wnhfp"]
 [ext_resource type="PackedScene" uid="uid://blnqrkjyk2wg5" path="res://Scenes/Interactables/InteractableExample.tscn" id="2_652tf"]
 [ext_resource type="Texture2D" uid="uid://jble31qrwuf0" path="res://BlenderFiles/NeighborhoodLayer2-back.png" id="2_rm7a3"]
@@ -15,6 +16,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedIn
 outlines = Array[PackedVector2Array]([PackedVector2Array(-637.833, 641.833, 640.667, 637.5, 643.667, -635.333, -639.167, -635.333)])
 
 [node name="PrototypeScene" type="Node2D"]
+script = ExtResource("1_ti7t0")
 
 [node name="Collision_Obstacales" type="StaticBody2D" parent="."]
 position = Vector2(2, 4)
