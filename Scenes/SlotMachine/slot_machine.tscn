@@ -13,13 +13,12 @@ font_color = Color(1, 1, 0.85098, 1)
 script = ExtResource("1_33ucq")
 
 [node name="DumpsterSprite" parent="." instance=ExtResource("2_yiamr")]
-position = Vector2(557, 274)
 scale = Vector2(6.00426, 6.00426)
 
 [node name="Slot_mask" type="Sprite2D" parent="."]
 self_modulate = Color(0.1234, 0.198644, 0.164185, 1)
 clip_children = 2
-position = Vector2(573, 433)
+position = Vector2(0, 159)
 scale = Vector2(0.649074, 0.756019)
 texture = ExtResource("2_33ucq")
 
@@ -36,6 +35,7 @@ position = Vector2(229.572, -1.32272)
 scale = Vector2(7, 7)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_left = 239.0
 offset_top = 512.0
 offset_right = 320.0

@@ -16,6 +16,8 @@ slotMachineController = ExtResource("3_652tf")
 
 [node name="TrashCan2" parent="." instance=ExtResource("2_652tf")]
 position = Vector2(990, 353)
+slotMachineController = ExtResource("3_652tf")
 
 [node name="TrashCan3" parent="." instance=ExtResource("2_652tf")]
 position = Vector2(144, 117)
+slotMachineController = ExtResource("3_652tf")

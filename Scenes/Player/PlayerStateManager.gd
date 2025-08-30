@@ -15,6 +15,7 @@ var currentInteractable : Node = null
 var currentHunger : float
 var currentNoise : float
 
+
 func _ready():
 	super._ready()
 	currentHunger = startingHunger

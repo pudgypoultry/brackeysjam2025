@@ -1,4 +1,5 @@
 extends Node2D
+class_name slot_machine_ctrl
 
 const SLOT_COLUMN = preload("res://Scenes/SlotMachine/slot_column.tscn")
 @onready var dumpster_sprite: Node2D = $DumpsterSprite
