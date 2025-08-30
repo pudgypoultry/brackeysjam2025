@@ -24,6 +24,7 @@ func Enter(old_state:State) -> void:
 	parentCharacter.add_child(slotMachine)
 	slotMachine.scale *= slotScaleFactor
 	var signalToWaitFor = slotMachine.spin_result.connect(HandleSlotReward)
+	slotMachine.respinning.connect(HandleSpin)
 	slotMachine.done_spinning.connect(HandleSlotDone)
 	print("Started Spinning")
 	await Signal(slotMachine, "done_spinning")
@@ -59,3 +60,7 @@ func HandleSlotReward(type : slot_machine_ctrl.spin_outcome, item : String):
 
 func HandleSlotDone():
 	slotMachine.queue_free()
+
+
+func HandleSpin():
+	stateManager.currentNoise *= 2.5

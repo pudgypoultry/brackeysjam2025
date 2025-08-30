@@ -20,6 +20,8 @@ func Exit(newState:State) -> void:
 
 func Update(delta) -> void:
 	super(delta)
+	if stateManager.currentNoise > 1.0:
+		stateManager.currentNoise -= delta * 0.25
 	
 
 

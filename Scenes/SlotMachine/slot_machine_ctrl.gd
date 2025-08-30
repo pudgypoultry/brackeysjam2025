@@ -20,6 +20,7 @@ var col_names:Array  = [slot1_names,  slot1_names,  slot1_names]
 @export var trans: Tween.TransitionType = Tween.TRANS_QUAD
 
 signal done_spinning()
+signal respinning()
 signal spin_result(type:spin_outcome, item:String)
 enum spin_outcome {Three_Match=0, Two_Match=1, No_Match=2}
 
@@ -37,6 +38,7 @@ func _ready() -> void:
 func spin() -> Array[int]:
 	if spin_lock:
 		return []
+	emit_signal("respinning")
 	spin_lock = true
 	dumpster_sprite.play_anim()
 	var longest_tween: Tween = null
@@ -103,6 +105,8 @@ func check_win(result_names: Array[String]) -> void:
 		print("🦝 WHOA! Jackpot! 3 ", winner, "s! You're really 'racc-rolling' now! 🦝")
 		label.text = "WHOA! Jackpot! 3 %ss! You're really 'racc-rolling' now!" % winner
 		spin_result.emit(spin_outcome.Three_Match, winner)
+		await get_tree().create_timer(3).timeout
+		EndSlotMachine()
 	elif max_count == 2:
 		print(" Two ", winner, "s! A 'racc-tacular' little win! ")
 		label.text = " Two %ss! A 'racc-tacular' little win! " % winner
