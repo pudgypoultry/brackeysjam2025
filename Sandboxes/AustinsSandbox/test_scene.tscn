@@ -2,16 +2,11 @@
 
 [ext_resource type="Script" uid="uid://r4jy5r7ac2d2" path="res://Scenes/SlotMachine/slot_machine_ctrl.gd" id="1_hdddn"]
 [ext_resource type="PackedScene" uid="uid://yilwpgirg4m0" path="res://Scenes/SlotMachine/slot_column.tscn" id="2_fo4gc"]
-[ext_resource type="Texture2D" uid="uid://cjrwtsj6x6knd" path="res://BlenderFiles/slotmachine_backdrop.png" id="2_hdddn"]
 [ext_resource type="Texture2D" uid="uid://d8vqm6f4cffu" path="res://Assets/slot_mask.png" id="3_e4nd7"]
+[ext_resource type="PackedScene" uid="uid://cqag4oi2fb80b" path="res://Scenes/SlotMachine/dumpster_sprite.tscn" id="5_n765e"]
 
 [node name="Slot_machine" type="Node2D"]
 script = ExtResource("1_hdddn")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(542, 296)
-scale = Vector2(5.88281, 5.35938)
-texture = ExtResource("2_hdddn")
 
 [node name="Slot_mask" type="Sprite2D" parent="."]
 self_modulate = Color(0.1234, 0.198644, 0.164185, 1)
@@ -31,3 +26,5 @@ scale = Vector2(7, 7)
 [node name="SlotColumn3" parent="Slot_mask" instance=ExtResource("2_fo4gc")]
 position = Vector2(229.572, -1.32272)
 scale = Vector2(7, 7)
+
+[node name="DumpsterSprite" parent="." instance=ExtResource("5_n765e")]

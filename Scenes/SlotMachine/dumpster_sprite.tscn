@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1x20srmpuynt"]
+[gd_scene load_steps=6 format=3 uid="uid://cqag4oi2fb80b"]
 
-[ext_resource type="Script" uid="uid://wbf7x1qbqwoq" path="res://Scenes/SlotMachine/dumpster_sprite_animation.gd" id="1_abi3o"]
+[ext_resource type="Script" path="res://Scenes/SlotMachine/dumpster_sprite_animation.gd" id="1_abi3o"]
 [ext_resource type="Texture2D" uid="uid://c7y8gjwthbs7y" path="res://BlenderFiles/DumpsterDive_sprite_sheet.PNG" id="1_rtdjo"]
 
 [sub_resource type="Animation" id="Animation_rdd5t"]
@@ -44,6 +44,7 @@ _data = {
 script = ExtResource("1_abi3o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(386, 142)
 texture = ExtResource("1_rtdjo")
 hframes = 4
 vframes = 5
