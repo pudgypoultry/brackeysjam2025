@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://1dc2s2sd0yea"]
+
+[ext_resource type="Texture2D" uid="uid://dxa43gwraeose" path="res://BlenderFiles/MenuBanner.png" id="1_6b2kt"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_bjvkm"]
+font_size = 106
+font_color = Color(0.939093, 0.807107, 0, 1)
+shadow_size = 34
+shadow_color = Color(0, 0, 0, 0.603922)
+shadow_offset = Vector2(5, 5)
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+texture = ExtResource("1_6b2kt")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -467.0
+offset_top = -184.0
+offset_right = 481.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "One Armed Bandit"
+label_settings = SubResource("LabelSettings_bjvkm")
+horizontal_alignment = 1
+vertical_alignment = 1

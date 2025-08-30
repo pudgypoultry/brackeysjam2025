@@ -1,12 +1,13 @@
 extends Node2D
 
 const SLOT_COLUMN = preload("res://Scenes/SlotMachine/slot_column.tscn")
-
+@onready var dumpster_sprite: Node2D = $DumpsterSprite
+@onready var label: Label = $Label
 @onready var slot_mask: Sprite2D = $Slot_mask
 @onready var slot_columns: Array[SlotColumn] = [$Slot_mask/SlotColumn, $Slot_mask/SlotColumn2, $Slot_mask/SlotColumn3]
 
 var slot1_values:Array[int] = [0, 8, 16, 24, 32, 40, 48, 56]
-var slot1_names:Array[String] = ["cookie", "wine","egg", "cheese", "tomato", "pretzel", "watermelon", "avocado"]
+var slot1_names:Array[String] = ["cookie", "wine", "egg", "cheese", "tomato", "pretzel", "watermelon", "avocado"]
 
 var col_values:Array = [slot1_values, slot1_values, slot1_values]
 var col_names:Array  = [slot1_names,  slot1_names,  slot1_names]
@@ -16,6 +17,9 @@ var col_names:Array  = [slot1_names,  slot1_names,  slot1_names]
 @export var extra_loops: int = 2
 @export var easing: Tween.EaseType = Tween.EASE_OUT
 @export var trans: Tween.TransitionType = Tween.TRANS_QUAD
+
+signal spin_result(type:spin_outcome, item:String)
+enum spin_outcome {Three_Match=0, Two_Match=1, No_Match=2}
 
 var column_size:int = 0
 var column_span: float = 0.0
@@ -32,7 +36,7 @@ func spin() -> Array[int]:
 	if spin_lock:
 		return []
 	spin_lock = true
-
+	dumpster_sprite.play_anim()
 	var longest_tween: Tween = null
 
 	for i in range(slot_columns.size()):
@@ -93,7 +97,13 @@ func check_win(result_names: Array[String]) -> void:
 			winner = k
 	if max_count == 3:
 		print("🦝 WHOA! Jackpot! 3 ", winner, "s! You're really 'racc-rolling' now! 🦝")
+		label.text = "WHOA! Jackpot! 3 %ss! You're really 'racc-rolling' now!" % winner
+		spin_result.emit(spin_outcome.Three_Match, winner)
 	elif max_count == 2:
 		print(" Two ", winner, "s! A 'racc-tacular' little win! ")
+		label.text = " Two %ss! A 'racc-tacular' little win! " % winner
+		spin_result.emit(spin_outcome.Two_Match, winner)
 	else:
 		print("No win! keep 'racc-ing' those spins!")
+		label.text = "No win! keep 'racc-ing' those spins!"
+		spin_result.emit(spin_outcome.No_Match, winner)
