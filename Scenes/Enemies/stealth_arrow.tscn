@@ -9,6 +9,7 @@ script = ExtResource("1_nl62l")
 
 [node name="arrow" type="Sprite2D" parent="."]
 modulate = Color(0.0640161, 0.0150048, 0.265967, 0.458824)
+z_index = 2
 position = Vector2(143, 1)
 rotation = 1.5708
 scale = Vector2(1, 0.65625)
@@ -18,4 +19,6 @@ texture = ExtResource("1_x7glc")
 position = Vector2(119, 1)
 
 [node name="StealthUI" parent="UI_pivot" instance=ExtResource("2_nl62l")]
+modulate = Color(1, 1, 1, 0.666667)
+z_index = 2
 position = Vector2(0, -4)
