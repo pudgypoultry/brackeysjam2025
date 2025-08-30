@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqv8nl5g0et6w"]
+[gd_scene load_steps=10 format=3 uid="uid://dqv8nl5g0et6w"]
 
 [ext_resource type="PackedScene" uid="uid://dniscs7pmoue0" path="res://Scenes/Player/RaccoonController.tscn" id="1_blrn6"]
 [ext_resource type="Texture2D" uid="uid://cohybxhqftdkj" path="res://BlenderFiles/NeighborhoodLayer1.png" id="1_wnhfp"]
 [ext_resource type="PackedScene" uid="uid://blnqrkjyk2wg5" path="res://Scenes/Interactables/InteractableExample.tscn" id="2_652tf"]
-[ext_resource type="Texture2D" uid="uid://duywpvalnhwyy" path="res://BlenderFiles/NeighborhoodLayer2.png" id="2_7228j"]
+[ext_resource type="Texture2D" uid="uid://jble31qrwuf0" path="res://BlenderFiles/NeighborhoodLayer2-back.png" id="2_rm7a3"]
 [ext_resource type="PackedScene" uid="uid://b75jhdhr2qdlo" path="res://Scenes/SlotMachine/slot_machine.tscn" id="3_652tf"]
+[ext_resource type="Texture2D" uid="uid://b2i6lxqeg86k6" path="res://BlenderFiles/NeighborhoodLayer2-front.png" id="3_ti7t0"]
 [ext_resource type="PackedScene" uid="uid://diy7dnb2hpnqy" path="res://Scenes/Enemies/dog_enemy.tscn" id="6_icw1t"]
 [ext_resource type="PackedScene" uid="uid://ll76is5dkq5s" path="res://Scenes/Enemies/hazmat_enemy.tscn" id="7_rm7a3"]
 
@@ -204,9 +205,12 @@ scale = Vector2(6, 6)
 [node name="background" type="Sprite2D" parent="World"]
 texture = ExtResource("1_wnhfp")
 
-[node name="foreground" type="Sprite2D" parent="World"]
+[node name="foreground-back" type="Sprite2D" parent="World"]
 z_index = 1
-texture = ExtResource("2_7228j")
+texture = ExtResource("2_rm7a3")
+
+[node name="foreground-front" type="Sprite2D" parent="World"]
+texture = ExtResource("3_ti7t0")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="World"]
 navigation_polygon = SubResource("NavigationPolygon_wnhfp")

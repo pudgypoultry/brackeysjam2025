@@ -10,6 +10,7 @@ font_size = 36
 font_color = Color(1, 1, 0.85098, 1)
 
 [node name="SlotMachine" type="Node2D"]
+z_index = 3
 script = ExtResource("1_33ucq")
 
 [node name="DumpsterSprite" parent="." instance=ExtResource("2_yiamr")]
