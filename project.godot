@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 TweenTools="*res://Globals/TweenTools.gd"
-SignalBank="*res://Sandboxes/AustinsSandbox/SignalBank.gd"
 
 [filesystem]
 

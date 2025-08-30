@@ -1,6 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://jikos8i7uxk7"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_qbtt5"]
+[gd_scene format=3 uid="uid://jikos8i7uxk7"]
 
 [node name="WallExample" type="Node2D"]
 
@@ -16,13 +14,3 @@ collision_mask = 3
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-4, -85)
 polygon = PackedVector2Array(-12, 17, -12, 123, 62, 123, 62, 99, 15, 99, 15, 17)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-2.5, -27)
-scale = Vector2(27, 82)
-texture = SubResource("PlaceholderTexture2D_qbtt5")
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(21, 26)
-scale = Vector2(73, 24.5)
-texture = SubResource("PlaceholderTexture2D_qbtt5")
