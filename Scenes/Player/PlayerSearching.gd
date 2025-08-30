@@ -11,6 +11,7 @@ extends State
 var parentCharacter : CharacterBody2D
 var movementDirection : Vector2
 var doneInteracting : bool = false
+var slotMachine
 
 # connect to spin_result(type:spin_outcome, item:String)
 
@@ -19,15 +20,14 @@ func Enter(old_state:State) -> void:
 	doneInteracting = false
 	stateManager.currentInteractable.hasBeenInteractedWith = true
 	### BEGIN VOLATILE SECTION
-	var slotMachine = stateManager.currentInteractable.slotMachineController.instantiate()
+	slotMachine = stateManager.currentInteractable.slotMachineController.instantiate()
 	parentCharacter.add_child(slotMachine)
 	slotMachine.scale *= slotScaleFactor
 	var signalToWaitFor = slotMachine.spin_result.connect(HandleSlotReward)
+	slotMachine.done_spinning.connect(HandleSlotDone)
 	print("Started Spinning")
-	await Signal(slotMachine, "spin_result")
+	await Signal(slotMachine, "done_spinning")
 	print("Finished Spinning")
-	#TODO: Need to retrieve reward from spin
-	# slotMachine.queue_free()
 	### END VOLATILE SECTION
 	doneInteracting = true
 
@@ -55,3 +55,7 @@ func InterpretInput(axisUD : float, axisLR : float, interacting : bool):
 
 func HandleSlotReward(type : slot_machine_ctrl.spin_outcome, item : String):
 	print("SLOT MACHINE RESULT: " + item + str(type))
+
+
+func HandleSlotDone():
+	slotMachine.queue_free()

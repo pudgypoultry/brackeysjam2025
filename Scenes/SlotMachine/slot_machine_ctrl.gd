@@ -19,6 +19,7 @@ var col_names:Array  = [slot1_names,  slot1_names,  slot1_names]
 @export var easing: Tween.EaseType = Tween.EASE_OUT
 @export var trans: Tween.TransitionType = Tween.TRANS_QUAD
 
+signal done_spinning()
 signal spin_result(type:spin_outcome, item:String)
 enum spin_outcome {Three_Match=0, Two_Match=1, No_Match=2}
 
@@ -82,6 +83,8 @@ func spin() -> Array[int]:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Spin Slot Machine"):
 		spin()
+	if event.is_action_pressed("ExitSlotMachine") and !spin_lock:
+		EndSlotMachine()
 
 func check_win(result_names: Array[String]) -> void:
 	if result_names.size() < 3:
@@ -108,3 +111,6 @@ func check_win(result_names: Array[String]) -> void:
 		print("No win! keep 'racc-ing' those spins!")
 		label.text = "No win! keep 'racc-ing' those spins!"
 		spin_result.emit(spin_outcome.No_Match, winner)
+
+func EndSlotMachine():
+	emit_signal("done_spinning")
